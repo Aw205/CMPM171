@@ -8,10 +8,10 @@ let config = {
     physics:{
         default: 'arcade',
         arcade: {
-            //debug: true
+            debug: true
         }
     },
-    scene: [Menu,GameScreen,TempRoom],
+    scene: [Menu,GameScreen,TempRoom,ModalDialouge],
     pixelArt: true,
     plugins: {
         scene: [

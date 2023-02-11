@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Sign",
+        "description": "It says gibberish."
+    },
+    {
+        "name": "Sign2",
+        "description": "It says random words."
+    },
+    {
+        "name": "whiskey glass",
+        "description": "has traces of arsenic"
+    },
+    {
+        "name": "playing cards",
+        "description": "playing alone? suspicious"
+    },
+    {
+        "name": "newspaper",
+        "description": "has a crossword puzzle"
+    },
+    {
+        "name": "note",
+        "description": "Note from Thompson"
+    },
+    {
+        "name": "Envelope",
+        "description": "Contains dirty money"
+    },
+    {
+        "name": "whiskey bottle",
+        "description": "Jameson irish whiskey, his favorite, but no traces of poison"
+    },
+    {
+        "name": "letter",
+        "description": "written to Jenny"
+    },
+    {
+        "name": "$20 bill",
+        "description": "tucked in shirt pocket"
+    }
+]

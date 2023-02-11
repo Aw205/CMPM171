@@ -13,25 +13,34 @@ class TempRoom extends Phaser.Scene {
 
     create() {
 
+
         this.player = new Player(this, 50, 50, "playerAnims");
         this.player.scale = 0.5;
         this.createMap();
+        this.createGridEngine();
+
+        this.cameras.main.fadeIn(500);
+        this.cameras.main.startFollow(this.player, false, 0.2, 0.2);
+        this.cameras.main.setZoom(2);
     }
 
     createMap() {
 
-        const map = this.make.tilemap({ key: "tempRoom" });
-        const interiorTileset = map.addTilesetImage("Interior", "interiors");
-        const roomTileset = map.addTilesetImage("Room", "room_builder");
+        this.map = this.make.tilemap({ key: "tempRoom" });
+        const interiorTileset = this.map.addTilesetImage("Interior", "interiors");
+        const roomTileset = this.map.addTilesetImage("Room", "room_builder");
 
         let layerNames = ["Floor", "Furniture", "Above Furniture", "Border"];
         for (let name of layerNames) {
-            let layer = map.createLayer(name, [interiorTileset, roomTileset]);
+            let layer = this.map.createLayer(name, [interiorTileset, roomTileset]);
         }
+        let entrances = this.map.createFromObjects("Entrances", {name: "Entrance", classType: Entrance });
+        for (let e of entrances) {
+            e.addColliders(); // can't do this in constructor because tilemap data isn't copied in until after createFromObjects
+        }
+    }
 
-        this.cameras.main.startFollow(this.player, false, 0.2, 0.2);
-        this.cameras.main.setZoom(2);
-
+    createGridEngine() {
         const gridEngineConfig = {
             characters: [
                 {
@@ -42,8 +51,12 @@ class TempRoom extends Phaser.Scene {
                 },
             ],
         };
-
-        this.gridEngine.create(map, gridEngineConfig);
+        this.gridEngine.create(this.map, gridEngineConfig);
+        this.gridEngine.positionChangeFinished().subscribe(() => {
+            let pos = this.gridEngine.getFacingPosition("player");
+            let worldPos = this.map.tileToWorldXY(pos.x, pos.y);
+            this.player.facingCollider.setPosition(worldPos.x + 8, worldPos.y + 8);
+        });
     }
 
 }

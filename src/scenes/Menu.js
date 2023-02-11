@@ -6,7 +6,6 @@ class Menu extends Phaser.Scene {
     }
 
     preload() {
-
         this.load.audio("button_click", "./assets/audio/button_click.wav");
         this.load.image("button_background", "./assets/button_background.png");
         this.load.spritesheet("playerAnims", "./assets/player/characters.png", {
@@ -16,7 +15,6 @@ class Menu extends Phaser.Scene {
     }
 
     create() {
-
         this.createAnimations('up', 90, 92);
         this.createAnimations('right', 78, 80);
         this.createAnimations('down', 54, 56);
@@ -25,13 +23,14 @@ class Menu extends Phaser.Scene {
         this.startButton = new TextButton(this, game.config.width / 2, 500, "Start", { fontSize: 30 }, () => {
             this.cameras.main.fadeOut(1500);
             this.cameras.main.once("camerafadeoutcomplete", () => {
-                this.scene.start("game_screen");
+                this.scene.start("GameScreen");
             });
         }).setOrigin(0.5);
         this.tutorialButton = new TextButton(this, game.config.width / 2, 550, "", { fontSize: 20 }, () => { }).setOrigin(0.5);
         this.creditsButton = new TextButton(this, game.config.width / 2, 600, "", { fontSize: 22 }, () => { }).setOrigin(0.5);
 
         this.tweenButtons();
+
     }
 
     tweenButtons() {
@@ -70,5 +69,6 @@ class Menu extends Phaser.Scene {
             yoyo: true,
         });
     }
+
 
 }

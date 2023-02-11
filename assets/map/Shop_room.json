@@ -24,7 +24,7 @@
          "name":"Floor",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":15,
          "x":0,
          "y":0
@@ -51,7 +51,7 @@
          "name":"Furniture",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":15,
          "x":0,
          "y":0
@@ -78,7 +78,7 @@
          "name":"Above Furniture",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":15,
          "x":0,
          "y":0
@@ -109,9 +109,38 @@
          "width":15,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "locked":true,
+         "name":"Entrances",
+         "objects":[
+                {
+                 "height":18.9320388349514,
+                 "id":2,
+                 "name":"Entrance",
+                 "properties":[
+                        {
+                         "name":"destination",
+                         "type":"string",
+                         "value":"GameScreen"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32.0388349514563,
+                 "x":96.116504854369,
+                 "y":240.291262135922
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":5,
- "nextobjectid":1,
+ "nextlayerid":6,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",
