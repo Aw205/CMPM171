@@ -1,7 +1,9 @@
 [
     {
         "name": "Sign",
-        "description": "It says gibberish."
+        "description": "It says gibberish.",
+        "forensics": "Traces of arsenic."
+
     },
     {
         "name": "Sign2",

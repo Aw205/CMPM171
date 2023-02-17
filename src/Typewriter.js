@@ -34,4 +34,8 @@ class Typewriter {
         this.isFinished = true;
 
     }
+
+    clearText() {
+        this.label.setText("");
+    }
 }

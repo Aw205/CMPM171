@@ -283,7 +283,7 @@
                         {
                          "name":"destination",
                          "type":"string",
-                         "value":"TempRoom"
+                         "value":"tempRoom"
                         }],
                  "rotation":0,
                  "type":"",
@@ -297,9 +297,32 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":10,
+         "locked":true,
+         "name":"NPC",
+         "objects":[
+                {
+                 "height":0,
+                 "id":15,
+                 "name":"Mayor Crowley",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":218.107463364762,
+                 "y":74.4064523457912
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":10,
- "nextobjectid":15,
+ "nextlayerid":11,
+ "nextobjectid":16,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",

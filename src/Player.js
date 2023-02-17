@@ -31,7 +31,14 @@ class Player extends Phaser.GameObjects.Sprite {
         let interactKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
         interactKey.on('down', () => {
             let pos = this.scene.gridEngine.getFacingPosition("player");
+            this.scene.events.emit("E", pos.x, pos.y); // for npcs
             this.scene.events.emit("E" + pos.x + "," + pos.y);
+        });
+
+        let invKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I); // temporary, just to demo inventory
+        invKey.on('down', () => {
+            this.scene.scene.pause();
+            this.scene.scene.run("InventoryScene", { items: this.scene.itemsPicked });
         });
     }
 }

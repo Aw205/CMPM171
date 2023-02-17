@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Lord Reynard",
+        "dialog": "I am Lord Reynard."
+    },
+    {
+        "name": "Mayor Crowley",
+        "dialog": "I am Mayor Crowley.\\Who are you?"
+    },
+    {
+        "name": "Commander Pike",
+        "dialog": "I am Commander Pike."
+    },
+    {
+        "name": "Professor Victor Bates",
+        "dialog": "I am Professor Victor Bates."
+    },
+    {
+        "name": "Lady Faust",
+        "dialog": "I am Lady Faust."
+    },
+    {
+        "name": "Jenny Pike",
+        "dialog": "I am Jenny Pike."
+    }
+]
