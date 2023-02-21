@@ -6,16 +6,16 @@ class TempRoom extends Phaser.Scene {
 
     preload() {
 
-        this.load.image("interiors", "./assets/map/Interiors.png");
-        this.load.image("room_builder", "./assets/map/Room_Builder.png");
+        this.load.image("Interior", "./assets/map/Interiors.png");
+        this.load.image("Room", "./assets/map/Room_Builder.png");
         this.load.tilemapTiledJSON("tempRoom", "./assets/map/Shop_room.json");
     }
 
     create() {
 
-
         this.player = new Player(this, 50, 50, "playerAnims");
         this.player.scale = 0.5;
+        
         this.createMap();
         this.createGridEngine();
 
@@ -27,16 +27,15 @@ class TempRoom extends Phaser.Scene {
     createMap() {
 
         this.map = this.make.tilemap({ key: "tempRoom" });
-        const interiorTileset = this.map.addTilesetImage("Interior", "interiors");
-        const roomTileset = this.map.addTilesetImage("Room", "room_builder");
-
-        let layerNames = ["Floor", "Furniture", "Above Furniture", "Border"];
-        for (let name of layerNames) {
-            let layer = this.map.createLayer(name, [interiorTileset, roomTileset]);
+        for(let ts of this.map.tilesets){
+            this.map.addTilesetImage(ts.name);
+        }
+        for(let layer of this.map.layers){
+            this.map.createLayer(layer.name, this.map.tilesets);
         }
         let entrances = this.map.createFromObjects("Entrances", {name: "Entrance", classType: Entrance });
         for (let e of entrances) {
-            e.addColliders(); // can't do this in constructor because tilemap data isn't copied in until after createFromObjects
+            e.addColliders();
         }
     }
 

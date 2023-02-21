@@ -2,12 +2,13 @@
     {
         "name": "Sign",
         "description": "It says gibberish.",
-        "forensics": "Traces of arsenic."
+        "forensics": ""
 
     },
     {
         "name": "Sign2",
-        "description": "It says random words."
+        "description": "It says random words.",
+        "forensics": ""
     },
     {
         "name": "whiskey glass",

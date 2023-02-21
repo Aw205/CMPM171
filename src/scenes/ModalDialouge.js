@@ -12,7 +12,7 @@ class ModalDialouge extends Phaser.Scene {
 
         this.typewriter = new Typewriter(this, 60, 380);
         this.cursors = this.input.keyboard.createCursorKeys();
-        this.input.keyboard.on('keydown-SPACE', this.onKeyDownSpace, this);
+        this.input.keyboard.on('keydown-SPACE', this.#onKeyDownSpace, this);
         this.add.image(0, 350, "box").setOrigin(0, 0).setScale(0.5, 0.5);
 
         this.sectionIndex = 0;
@@ -20,7 +20,7 @@ class ModalDialouge extends Phaser.Scene {
         this.typewriter.write(this.textArr[0]);
     }
 
-    onKeyDownSpace() {
+    #onKeyDownSpace() {
 
         if (!this.typewriter.isFinished) {
             return this.typewriter.fastForward();

@@ -11,7 +11,7 @@ let config = {
             debug: true
         }
     },
-    scene: [Menu,GameScreen,TempRoom,ModalDialouge,InventoryScene],
+    scene: [Menu,GameScreen,TempRoom,ModalDialouge,InventoryScene,Mailbox],
     autoCenter: true,
     pixelArt: true,
     plugins: {

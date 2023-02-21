@@ -8,27 +8,27 @@ class TextButton extends Phaser.GameObjects.Text{
         this.setColor("#ADD8E6");
         this.callback = callback;
         this.setInteractive({useHandCursor: true})
-            .on("pointerdown", ()=> this.onClick())
-            .on("pointerover",()=> this.enterButtonHoverState())
-            .on("pointerout",()=> this.enterButtonRestState());
+            .on("pointerdown", ()=> this.#onClick())
+            .on("pointerover",()=> this.#enterButtonHoverState())
+            .on("pointerout",()=> this.#enterButtonRestState());
         this.scene.add.existing(this);
 
     }
 
-      onClick(){
+      #onClick(){
         this.scene.sound.play("button_click",{volume:0.1});
         this.callback();
       }
 
-      enterButtonHoverState() {
+      #enterButtonHoverState() {
         this.setStyle({ fill: "#ffff00"});
       }
     
-      enterButtonRestState() {
+      #enterButtonRestState() {
         this.setStyle({ fill: "#ADD8E6"});
       }
     
-      enterButtonActiveState() {
+      #enterButtonActiveState() {
         this.setStyle({ fill: '#0ff' });
       }
 

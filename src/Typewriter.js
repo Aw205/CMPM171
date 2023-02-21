@@ -12,6 +12,7 @@ class Typewriter {
     }
 
     write(text) {
+        
         this.text = text;
         this.label = this.scene.add.text(this.x, this.y, '').setWordWrapWidth(480);
         const lines = this.label.getWrappedText(text)
@@ -37,5 +38,10 @@ class Typewriter {
 
     clearText() {
         this.label.setText("");
+    }
+
+    setPosition(x,y){
+        this.x = x;
+        this.y = y;
     }
 }

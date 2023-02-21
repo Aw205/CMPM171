@@ -15,6 +15,9 @@ class Menu extends Phaser.Scene {
     }
 
     create() {
+
+        //this.add.text(0,100,"Hello",{color: "0",stroke: "#fff",strokeThickness: 3, fontFamily: "Impact", fontSize: 48});
+
         this.createAnimations('up', 90, 92);
         this.createAnimations('right', 78, 80);
         this.createAnimations('down', 54, 56);

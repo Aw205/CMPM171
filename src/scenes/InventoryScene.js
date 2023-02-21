@@ -5,10 +5,10 @@ class InventoryScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("slot", "./assets/Inventory_Slot.png")
+        //this.load.image("slot", "./assets/Inventory_Slot.png")
     }
 
-    create(data) {
+    create() {
 
         this.cameras.main.setZoom(2);
         this.inventory = new Inventory(this, config.width / 2, config.height / 2, null);
@@ -17,13 +17,11 @@ class InventoryScene extends Phaser.Scene {
             this.scene.sleep();
             this.scene.resume("GameScreen");
         });
-        this.events.on("wake", (sys, data) => {
-            if (data.items.length != 0) {
-                this.inventory.addItems(data.items);
-            }
+
+        this.events.on("itemPicked",(item)=>{
+            this.inventory.addItem(item);
         });
-        if (data.items.length != 0) { //redundancy needed if player collects item before accessing inventory for first time
-            this.inventory.addItems(data.items);
-        }
+
     }
+
 }

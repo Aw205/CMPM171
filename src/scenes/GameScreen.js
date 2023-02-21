@@ -6,7 +6,7 @@ class GameScreen extends Phaser.Scene {
     }
 
     preload() {
-        this.load.spritesheet("serene_village", "./assets/map/Serene_Village.png", { frameWidth: 16, frameHeight: 16 });
+        this.load.spritesheet("Serene_Village", "./assets/map/Serene_Village.png", { frameWidth: 16, frameHeight: 16 });
         this.load.tilemapTiledJSON("tilemap", "./assets/map/tempMap.json");
         this.load.json("objects", "./assets/objects.json");
         this.load.json("dialogs", "./assets/dialog.json");
@@ -15,16 +15,18 @@ class GameScreen extends Phaser.Scene {
 
     create() {
 
-        this.itemsPicked = []; //might need to pass this to other scenes, using data manager?
-
         this.player = new Player(this, 100, 150, "playerAnims");
         this.player.scale = 0.5;
         this.player.setDepth(10);
+
+        //this.registry.set("player_data",{})
 
         this.objectMap = this.createObjectMap();
         this.npcMap = this.createNPCMap();
         this.createMap();
         this.createGridEngine();
+
+        //this.openingTransition();
 
         this.cameras.main.fadeIn(500);
         this.cameras.main.startFollow(this.player, true);
@@ -36,13 +38,25 @@ class GameScreen extends Phaser.Scene {
         });
     }
 
+    openingTransition(){
+
+        let t = new Typewriter(this,60,70);
+        t.write("NEW YORK");
+
+        this.time.delayedCall(2000, () => {
+            t.setPosition(60,85);
+            t.write("1937");
+        });
+    }
+
     createMap() {
 
         this.map = this.make.tilemap({ key: "tilemap" });
-        const tileset = this.map.addTilesetImage("Serene_Village", "serene_village");
-        let layerNames = ["Ground", "4", "3", "2", "1", "Houses", "Above Houses"];
-        for (let name of layerNames) {
-            let layer = this.map.createLayer(name, tileset);
+        for(let ts of this.map.tilesets){
+            this.map.addTilesetImage(ts.name);
+        }
+        for(let layer of this.map.layers){
+            this.map.createLayer(layer.name, this.map.tilesets);
         }
 
         let entrances = this.map.createFromObjects("House Entrance", { name: "Entrance", classType: Entrance });
@@ -52,14 +66,15 @@ class GameScreen extends Phaser.Scene {
 
         let interact = this.map.createFromObjects("Interactables");
         for (let obj of interact) {
+            
+            obj.info = this.objectMap.get(obj.name);
             let pos = this.map.worldToTileXY(obj.x, obj.y);
             let playerInteractEvent = "E" + pos.x + "," + pos.y;
 
-            //console.log(obj.frame.name); gets the frame num for texture
-
             this.events.on(playerInteractEvent, () => {
+
                 this.scene.pause().run("ModalDialouge", { text: this.objectMap.get(obj.name).description });
-                this.itemsPicked.push(obj);
+                this.scene.get("InventoryScene").events.emit("itemPicked",obj);
                 obj.destroy();
                 obj = null;
                 this.events.removeListener(playerInteractEvent);
@@ -78,6 +93,8 @@ class GameScreen extends Phaser.Scene {
                 }
             }, this);
         }
+
+
     }
 
 
