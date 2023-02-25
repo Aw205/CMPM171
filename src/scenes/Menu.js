@@ -5,18 +5,12 @@ class Menu extends Phaser.Scene {
         super("Menu");
     }
 
-    preload() {
-        this.load.audio("button_click", "./assets/audio/button_click.wav");
-        this.load.image("button_background", "./assets/button_background.png");
-        this.load.spritesheet("playerAnims", "./assets/player/characters.png", {
-            frameWidth: 52,
-            frameHeight: 72,
-        });
-    }
-
     create() {
 
         //this.add.text(0,100,"Hello",{color: "0",stroke: "#fff",strokeThickness: 3, fontFamily: "Impact", fontSize: 48});
+
+        this.add.text(game.config.width/2,100,"Out of Depth",{fontSize: 48}).setOrigin(0.5,0);
+
 
         this.createAnimations('up', 90, 92);
         this.createAnimations('right', 78, 80);
@@ -26,7 +20,7 @@ class Menu extends Phaser.Scene {
         this.startButton = new TextButton(this, game.config.width / 2, 500, "Start", { fontSize: 30 }, () => {
             this.cameras.main.fadeOut(1500);
             this.cameras.main.once("camerafadeoutcomplete", () => {
-                this.scene.start("GameScreen");
+                this.scene.start("Office");
             });
         }).setOrigin(0.5);
         this.tutorialButton = new TextButton(this, game.config.width / 2, 550, "", { fontSize: 20 }, () => { }).setOrigin(0.5);

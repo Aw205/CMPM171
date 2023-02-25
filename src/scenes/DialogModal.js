@@ -1,11 +1,7 @@
-class ModalDialouge extends Phaser.Scene {
+class DialogModal extends Phaser.Scene {
 
     constructor() {
-        super("ModalDialouge");
-    }
-
-    preload() {
-        this.load.image("box", "./assets/box.png");
+        super("DialogModal");
     }
 
     create(data) {

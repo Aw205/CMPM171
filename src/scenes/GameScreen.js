@@ -5,14 +5,6 @@ class GameScreen extends Phaser.Scene {
         super("GameScreen");
     }
 
-    preload() {
-        this.load.spritesheet("Serene_Village", "./assets/map/Serene_Village.png", { frameWidth: 16, frameHeight: 16 });
-        this.load.tilemapTiledJSON("tilemap", "./assets/map/tempMap.json");
-        this.load.json("objects", "./assets/objects.json");
-        this.load.json("dialogs", "./assets/dialog.json");
-
-    }
-
     create() {
 
         this.player = new Player(this, 100, 150, "playerAnims");
@@ -73,7 +65,7 @@ class GameScreen extends Phaser.Scene {
 
             this.events.on(playerInteractEvent, () => {
 
-                this.scene.pause().run("ModalDialouge", { text: this.objectMap.get(obj.name).description });
+                this.scene.pause().run("DialogModal", { text: this.objectMap.get(obj.name).description });
                 this.scene.get("InventoryScene").events.emit("itemPicked",obj);
                 obj.destroy();
                 obj = null;
@@ -89,7 +81,7 @@ class GameScreen extends Phaser.Scene {
                 if (pos.x == x && pos.y == y) {
                     let playerDir = this.gridEngine.getFacingDirection("player");
                     this.gridEngine.turnTowards(npc.name, this.getOppositeDir(playerDir));
-                    this.scene.pause().run("ModalDialouge", { text: this.npcMap.get(npc.name).dialog });
+                    this.scene.pause().run("DialogModal", { text: this.npcMap.get(npc.name).dialog });
                 }
             }, this);
         }

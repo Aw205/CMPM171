@@ -4,42 +4,35 @@ class Mailbox extends Phaser.Scene {
         super("Mailbox");
     }
 
-    preload() {
-
-        this.load.bitmapFont('clean', './assets/fonts/CleanBasic.png', './assets/fonts/CleanBasic.xml');
-       
-    }
-
     create() {
 
-        this.cameras.main.setZoom(2);
+        this.graphics = this.add.graphics();
         this.createMailbox();
-        let exitKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M); //temp method
-        exitKey.on("down", () => {
-            this.scene.sleep();
-            this.scene.resume("GameScreen");
-        });
-
-        this.events.on("sendMail",()=>{
-            console.log("mail received");
-            this.addMessage();
-            this.mailNum++;
-        });
         this.mailNum = 0;
+
+        let exitButton = this.add.image(500, 75, "exit").setScale(2, 2).setOrigin(0, 0);
+        exitButton.setInteractive({ useHandCursor: true });
+        exitButton.on("pointerdown", () => {
+            this.scene.sleep().resume("Office");
+        });
+        this.events.on("sendMail", () => {
+            this.addMessage();
+        });
+
+        this.addMessage("Welcome!", "Hey,\n welcome to the game!");
+        this.addMessage("Next Steps", "Explore the office! Check out your desk and clues chest.")
+
     }
 
-    createMailbox(){
-
-        let background = new Phaser.GameObjects.Rectangle(this,200,150,100,400,0x964B00,0.7);
-        background.setOrigin(0,0);
-        this.add.existing(background);
+    createMailbox() {
+        this.graphics.fillStyle(0x523A28, 0.9);
+        this.graphics.fillRoundedRect(50, 65, 520, 400, 20);
     }
 
-    addMessage(){
+    addMessage(title, body) {
 
-        let r = new Message(this,200,150+this.mailNum*20,100,18);
-        r.setOrigin(0,0);
-
+        let r = new MessageHeader(this, { x: 55, y: 115 + this.mailNum * 40 }, title, body);
+        this.mailNum++;
     }
 
 }

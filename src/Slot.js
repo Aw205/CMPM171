@@ -2,7 +2,7 @@ class Slot extends Phaser.GameObjects.Container {
 
     constructor(scene, x, y, children) {
         super(scene, x, y, children);
-        this.size = 18;
+        this.size = 45;
         this.setSize(this.size,this.size);
         this.setInteractive({ draggable: true, dropZone: true });
         this.item = null;

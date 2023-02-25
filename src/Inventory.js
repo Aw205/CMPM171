@@ -13,8 +13,8 @@ class Inventory extends Phaser.GameObjects.Container {
 
         for (let y = -this.invHeight / 2; y < this.invHeight / 2; y++) {
             for (let x = -this.invWidth / 2; x < this.invWidth / 2; x++) {
-                this.add(new Phaser.GameObjects.Rectangle(this.scene,x*20,y*20,18,18,0x262BA5,0.5));
-                this.add(new Slot(this.scene, x * 20, y * 20));
+                this.add(new Phaser.GameObjects.Rectangle(this.scene,x*50,y*50,45,45,0x262BA5,0.5));
+                this.add(new Slot(this.scene, x * 50, y * 50));
             }
         }
     }

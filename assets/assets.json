@@ -1,0 +1,48 @@
+{
+    "image": {
+        "arrow": "UI/arrow.png",
+        "box": "UI/box.png",
+        "button_background": "UI/button_background.png",
+        "env_closed": "UI/envelope_sealed.png",
+        "env_opened": "UI/envelope_unsealed.png",
+        "exit": "UI/exit_button.png",
+        "portrait_frame": "UI/Frame14.png",
+        "player_portrait": "UI/player_portrait.png",
+        "folder": "UI/yellow_folder.png",
+        "Interior": "map/Interiors.png",
+        "Room": "map/Room_Builder.png"
+    },
+    "audio": {
+        "button_click": "audio/button_click.wav"
+    },
+    "spritesheet": {
+        "playerAnims": [
+            "player/characters.png",
+            {
+                "frameWidth": 52,
+                "frameHeight": 72
+            }
+        ],
+        "Serene_Village": [
+            "map/Serene_Village.png",
+            {
+                "frameWidth": 16,
+                "frameHeight": 16
+            }
+        ]
+    },
+    "json": {
+        "dialogs": "dialog.json",
+        "objects": "objects.json"
+    },
+    "bitmapFont": {
+        "clean": [
+            "fonts/CleanBasic.png",
+            "fonts/CleanBasic.xml"
+        ]
+    },
+    "tilemapTiledJSON": {
+        "tilemap": "map/tempMap.json",
+        "office": "map/Shop_room.json"
+    }
+}
