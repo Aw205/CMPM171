@@ -26,7 +26,7 @@ class InventoryItem extends Phaser.GameObjects.Image{
             this.parentContainer.startX = this.parentContainer.x;
             this.parentContainer.startY = this.parentContainer.y;
             this.parentContainer.disableInteractive();
-            this.setOrigin((16 - localX) / 16, (16 - localY) / 16); //16 is size of item texture
+            this.setOrigin((64 - localX) / 64, (64 - localY) / 64); //16 is size of item texture
         });
 
         this.on("drag", (pointer, dragX, dragY) => {

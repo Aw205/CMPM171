@@ -7,10 +7,13 @@ class Menu extends Phaser.Scene {
 
     create() {
 
-        //this.add.text(0,100,"Hello",{color: "0",stroke: "#fff",strokeThickness: 3, fontFamily: "Impact", fontSize: 48});
-
-        this.add.text(game.config.width/2,100,"Out of Depth",{fontSize: 48}).setOrigin(0.5,0);
-
+        this.text = this.add.bitmapText(game.config.width/2,100,"clean","Out of Depth").setFontSize(48).setOrigin(0.5,0).setAlpha(0);
+        this.tweens.add({
+            targets: this.text,
+            alpha: 1,
+            duration: 3500,
+            ease: "Quad.easeIn",
+        });       
 
         this.createAnimations('up', 90, 92);
         this.createAnimations('right', 78, 80);
@@ -18,6 +21,8 @@ class Menu extends Phaser.Scene {
         this.createAnimations('left', 66, 68);
 
         this.startButton = new TextButton(this, game.config.width / 2, 500, "Start", { fontSize: 30 }, () => {
+
+           
             this.cameras.main.fadeOut(1500);
             this.cameras.main.once("camerafadeoutcomplete", () => {
                 this.scene.start("Office");
@@ -27,7 +32,6 @@ class Menu extends Phaser.Scene {
         this.creditsButton = new TextButton(this, game.config.width / 2, 600, "", { fontSize: 22 }, () => { }).setOrigin(0.5);
 
         this.tweenButtons();
-
     }
 
     tweenButtons() {
@@ -37,14 +41,12 @@ class Menu extends Phaser.Scene {
             ease: Phaser.Math.Easing.Sine.InOut,
             duration: 1500
         });
-
         this.tweens.add({
             targets: [this.tutorialButton, this.tutorialButton.img],
             y: 320,
             ease: Phaser.Math.Easing.Sine.InOut,
             duration: 1500
         });
-
         this.tweens.add({
             targets: [this.creditsButton, this.creditsButton.img],
             y: 390,

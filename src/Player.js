@@ -34,17 +34,11 @@ class Player extends Phaser.GameObjects.Sprite {
             this.scene.events.emit("E" + pos.x + "," + pos.y);
         });
 
-        let invKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.I); // temporary, just to demo inventory
-        invKey.on('down', () => {
-            this.scene.scene.pause();
-            this.scene.scene.run("InventoryScene");
-        });
-
-        let mailKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M); // temporary, just to demo mail
-        mailKey.on('down', () => {
-            this.scene.scene.get("Mailbox").events.emit("sendMail");
-            this.scene.scene.pause();
-            this.scene.scene.run("Mailbox");
-        });
+        // let mailKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M); // temporary, just to demo mail
+        // mailKey.on('down', () => {
+        //     this.scene.scene.get("Mailbox").events.emit("sendMail");
+        //     this.scene.scene.pause();
+        //     this.scene.scene.run("Mailbox");
+        // });
     }
 }

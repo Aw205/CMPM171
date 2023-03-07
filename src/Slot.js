@@ -15,4 +15,12 @@ class Slot extends Phaser.GameObjects.Container {
         this.add(this.item);
 
     }
+
+    removeItem(){
+
+        if(this.item!=null){
+            this.item.destroy(true);
+        }
+
+    }
 }

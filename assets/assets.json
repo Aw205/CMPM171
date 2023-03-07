@@ -29,6 +29,13 @@
                 "frameWidth": 16,
                 "frameHeight": 16
             }
+        ],
+        "Office": [
+            "map/Office_new.png",
+            {
+                "frameWidth": 64,
+                "frameHeight": 64
+            }
         ]
     },
     "json": {
@@ -43,6 +50,6 @@
     },
     "tilemapTiledJSON": {
         "tilemap": "map/tempMap.json",
-        "office": "map/Shop_room.json"
+        "office": "map/OfficeMap.json"
     }
 }

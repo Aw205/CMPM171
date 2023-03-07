@@ -5,7 +5,7 @@ class Mailbox extends Phaser.Scene {
     }
 
     create() {
-
+        
         this.graphics = this.add.graphics();
         this.createMailbox();
         this.mailNum = 0;

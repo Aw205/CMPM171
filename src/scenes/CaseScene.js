@@ -14,7 +14,6 @@ class CaseScene extends Phaser.Scene {
             this.scene.stop().run("GameScreen");
         });
 
-
         this.add.text(130, 150, "Crime Scene Portrait", { color: "0" });
         this.add.text(350, 140, "Description: ");
 

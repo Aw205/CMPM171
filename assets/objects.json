@@ -20,7 +20,7 @@
     },
     {
         "name": "newspaper",
-        "description": "has a crossword puzzle"
+        "description": "Has an unsolved crossword puzzle."
     },
     {
         "name": "note",
@@ -32,7 +32,7 @@
     },
     {
         "name": "whiskey bottle",
-        "description": "Jameson irish whiskey, his favorite, but no traces of poison"
+        "description": "Jameson Irish whiskey, his favorite."
     },
     {
         "name": "letter",

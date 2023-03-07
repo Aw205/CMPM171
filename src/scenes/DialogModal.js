@@ -25,7 +25,7 @@ class DialogModal extends Phaser.Scene {
             this.typewriter.clearText();
             return this.typewriter.write(this.textArr[++this.sectionIndex]);
         }
-        this.scene.resume("GameScreen").stop();
+        this.scene.resume("Office").stop();
     }
 
 }
