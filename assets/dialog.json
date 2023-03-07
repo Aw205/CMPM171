@@ -1,26 +1,32 @@
 [
     {
         "name": "Lord Reynard",
-        "dialog": "I am Lord Reynard."
+        "bio": "- British Philanthropist\n- dislikes the Mayor\n-doesn't trust the police\n- Wants to rid corruption",
+        "transcript": "I actually don’t even know Thompson that well.\n I spend most of my time dealing with my business overseas and looking at real estate.\nThough I suspect most people as rich as Thompson have something to hide.  "
     },
     {
         "name": "Mayor Crowley",
-        "dialog": "I am Mayor Crowley.\\Who are you?"
+        "bio": "- Rivals with Thompson\n - visits Thompson often\n  - gone out all night, no alibi\n - Wants to continue being Mayor",
+        "transcript": "Such a shame this happened right before our election.\n If I knew this would happen, I wouldn’t have poured so much money into my campaign."
     },
     {
         "name": "Commander Pike",
-        "dialog": "I am Commander Pike."
+        "bio": "- Endorsed by the Mayor\n- Jacob’s Boss (your grand boss?)\n- dislikes Thompson\n- Wants to get promoted to Chief",
+        "transcript": "I never liked Thompson, I think the world is better off without war profiteers like him.\nNow I’m never getting promoted to Commissioner because of the Mayor. "
     },
     {
-        "name": "Professor Victor Bates",
-        "dialog": "I am Professor Victor Bates."
+        "name": "Professor Bates",
+        "bio": "- visits friend Thompson often\n- has gambling problem\n- suspects Faust as untrustworthy\n- Wants to get rich fast",
+        "transcript": "Last time I killed someone was when I was fighting in The Great War!\nThompson is my brother in arms! Why would I kill him?"
     },
     {
         "name": "Lady Faust",
-        "dialog": "I am Lady Faust."
+        "bio": "-wants Mayor to win\n- has beef with Thompson\n - spills tea on Mayor’s habits\n- Wants political power/status",
+        "transcript": "People may think I hold a grudge against Thompson, but that's just slander against foreigners like me.\nMy beef with Thompson is nothing personal, it's always just been business."
     },
     {
-        "name": "Jenny Pike",
-        "dialog": "I am Jenny Pike."
+        "name": "Jenny",
+        "bio": " - Thompson’s mistress\n- reluctant to talk to player\n - visits Thompson often\n - dislikes Everyone, knows drugs",
+        "transcript": "I don't talk to cops\nFine, I don’t know anything about those elite psychopaths.\nThompson is my least favorite client, I hated seeing him. Are we done?"
     }
 ]
