@@ -37,8 +37,8 @@ class GameScreen extends Phaser.Scene {
 
         this.time.delayedCall(2000, () => {
             t.setPosition(60,85);
-            t.write("1937");
-        });
+            t.write("1939");
+        }); 
     }
 
     createMap() {

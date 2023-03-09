@@ -8,7 +8,7 @@ class Office extends Phaser.Scene {
 
         this.tw = new Typewriter(this, 100, 100);
         this.tw.writeBitmapText("New York \n\n 1937"); 
-
+        
         this.time.delayedCall(3000, () => {
             this.player = new Player(this, 0, 0, "playerAnims");
             this.objectMap = this.createObjectMap();

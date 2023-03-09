@@ -28,8 +28,8 @@ class Menu extends Phaser.Scene {
                 this.scene.start("Office");
             });
         }).setOrigin(0.5);
-        this.tutorialButton = new TextButton(this, game.config.width / 2, 550, "", { fontSize: 20 }, () => { }).setOrigin(0.5);
-        this.creditsButton = new TextButton(this, game.config.width / 2, 600, "", { fontSize: 22 }, () => { }).setOrigin(0.5);
+        this.tutorialButton = new TextButton(this, game.config.width / 2, 550, "Options", { fontSize: 20 }, () => { }).setOrigin(0.5);
+        this.creditsButton = new TextButton(this, game.config.width / 2, 600, "Credits", { fontSize: 22 }, () => { }).setOrigin(0.5);
 
         this.tweenButtons();
     }
