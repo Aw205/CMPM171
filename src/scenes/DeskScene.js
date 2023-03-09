@@ -14,12 +14,9 @@ class DeskScene extends Phaser.Scene {
 
         this.#createListeners();
 
-        let exitButton = this.add.image(530, 80, "exit").setOrigin(0, 0).setScale(2, 2);
-        exitButton.setInteractive({ useHandCursor: true });
-        exitButton.on("pointerdown", () => {
+        new ImageButton(this, 540, 80, "exitButton", undefined, "exitPressedButton", () => {
             this.scene.stop().run("Office");
-        });
-
+        }).setScale(2).setOrigin(0,0);
     }
 
     #createListeners() {

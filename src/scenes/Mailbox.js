@@ -10,11 +10,9 @@ class Mailbox extends Phaser.Scene {
         this.createMailbox();
         this.mailNum = 0;
 
-        let exitButton = this.add.image(500, 75, "exit").setScale(2, 2).setOrigin(0, 0);
-        exitButton.setInteractive({ useHandCursor: true });
-        exitButton.on("pointerdown", () => {
+        new ImageButton(this, 530, 90, "exitButton", undefined, "exitPressedButton", () => {
             this.scene.sleep().resume("Office");
-        });
+        }).setScale(2,2);
         this.events.on("sendMail", () => {
             this.addMessage();
         });

@@ -4,15 +4,13 @@ class InventoryItem extends Phaser.GameObjects.Image{
         super(scene,x,y,item.texture,item.frame.name);
 
         this.item = item;
-
         this.setInteractive({ draggable: true, useHandCursor: true });
         this.#createListeners();
 
         this.name = item.info.name;
         this.description = item.info.description;
-       
-        this.label = new Phaser.GameObjects.Text(scene,0,0,this.name,{backgroundColor:"#0000004F",color: "#fff", fontSize: "12px"});
-        scene.add.existing(this.label);
+
+        this.label = this.scene.add.bitmapText(0,0,"peaberry",this.name);
         this.label.setOrigin(0,0);
         this.label.setVisible(false);
     }
