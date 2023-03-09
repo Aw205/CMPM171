@@ -1,16 +1,17 @@
 {
     "image": {
-        "arrow": "UI/arrow.png",
+        "messageBox": "UI/dialogBox.png", 
+        "backButton": "UI/backArrow.png",
+        "exitPressedButton" : "UI/exitPressedButton.png",
+        "exitButton" : "UI/exitButton.png",
+        "mailPaper" : "UI/mailPaper.png",
         "box": "UI/box.png",
         "button_background": "UI/button_background.png",
         "env_closed": "UI/envelope_sealed.png",
         "env_opened": "UI/envelope_unsealed.png",
-        "exit": "UI/exit_button.png",
         "portrait_frame": "UI/Frame14.png",
         "player_portrait": "UI/player_portrait.png",
-        "folder": "UI/yellow_folder.png",
-        "Interior": "map/Interiors.png",
-        "Room": "map/Room_Builder.png"
+        "folder": "UI/yellow_folder.png"
     },
     "audio": {
         "button_click": "audio/button_click.wav"
@@ -46,6 +47,10 @@
         "clean": [
             "fonts/CleanBasic.png",
             "fonts/CleanBasic.xml"
+        ],
+        "peaberry": [
+            "fonts/WhitePeaberry.png",
+            "fonts/WhitePeaberry.xml"
         ]
     },
     "tilemapTiledJSON": {

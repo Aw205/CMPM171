@@ -12,11 +12,13 @@ class SuspectSelectionScene extends Phaser.Scene {
         this.names = [["Lord Reynard","Mayor Crowley"],["Commander Pike","Professor Bates"],["Lady Faust","Jenny"]];
         this.#createPortraits();
 
-        let exitButton = this.add.image(530, 80, "exit").setOrigin(0, 0).setScale(2, 2);
-        exitButton.setInteractive({ useHandCursor: true });
-        exitButton.on("pointerdown", () => {
+        new ImageButton(this, 550, 80, "exitButton", undefined, "exitPressedButton", () => {
             this.scene.stop().run("Office");
-        });
+        }).setScale(2);
+
+        new ImageButton(this, 100, 80, "backButton", undefined, "backButton", () => {
+            this.scene.stop().run("DeskScene");
+        }).setScale(2);
     }
 
     #createPortraits() {

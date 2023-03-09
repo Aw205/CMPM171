@@ -1,4 +1,4 @@
-<!-- beige 245,245,220 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Out of Depth</title>
+    <!-- @font-face {
+        font-family: monods;
+        src: url('assets/fonts/monogram.ttf');
+        } -->
     <style>
         body {
             background-color: rgb(0, 0, 0); 
         }
-        
     </style>
+    <div style="font-family: monods; position: absolute; left:-1000px; visibility:hidden;">.</div>
 </head>
 <body>
     <script src="./lib/phaser.js"></script>
@@ -22,6 +26,7 @@
     <script src="./src/InventoryItem.js"></script>
     <script src="./src/Entrance.js"></script>
     <script src="./src/TextButton.js"></script>
+    <script src="./src/ImageButton.js"></script>
     <script src="./src/Typewriter.js"></script>
     <script src="./src/MessageHeader.js"></script>
     <script src="./src/scenes/AccusationScene.js"></script>

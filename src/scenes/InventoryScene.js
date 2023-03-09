@@ -20,15 +20,9 @@ class InventoryScene extends Phaser.Scene {
         this.events.on("itemPicked", (item) => {
             this.inventory.addItem(item);
         });
-
     }
 
     sendToForensics(item){
-
         item.destroy(true);
-       
     }
-
-    
-
 }

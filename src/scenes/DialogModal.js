@@ -10,6 +10,7 @@ class DialogModal extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown-SPACE', this.#onKeyDownSpace, this);
         this.add.image(0, 350, "box").setOrigin(0, 0).setScale(0.5, 0.5);
+        //this.add.image(0, 350, "messageBox").setOrigin(0, 0).setScale(2,2);
 
         this.sectionIndex = 0;
         this.textArr = data.text.split("\\");
@@ -25,7 +26,7 @@ class DialogModal extends Phaser.Scene {
             this.typewriter.clearText();
             return this.typewriter.write(this.textArr[++this.sectionIndex]);
         }
-        this.scene.resume("Office").stop();
+        this.scene.stop().resume("Office");
     }
 
 }

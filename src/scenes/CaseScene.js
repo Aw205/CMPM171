@@ -17,18 +17,12 @@ class CaseScene extends Phaser.Scene {
         this.add.text(130, 150, "Crime Scene Portrait", { color: "0" });
         this.add.text(350, 140, "Description: ");
 
-        let exitButton = this.add.image(530, 80, "exit").setOrigin(0, 0).setScale(2, 2);
-        exitButton.setInteractive({ useHandCursor: true });
-        exitButton.on("pointerdown", () => {
+        new ImageButton(this, 550, 80, "exitButton", undefined, "exitPressedButton", () => {
             this.scene.stop().run("Office");
-        });
-
-        let backButton = this.add.image(80, 75, "arrow").setOrigin(0, 0).setScale(1.5, 1.5);
-        backButton.setInteractive({ useHandCursor: true });
-        backButton.on("pointerdown", () => {
+        }).setScale(2);
+        new ImageButton(this, 100, 80, "backButton", undefined, "backButton", () => {
             this.scene.stop().run("DeskScene");
-        });
-
+        }).setScale(2);
     }
 
 }
