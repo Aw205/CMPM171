@@ -19,6 +19,7 @@ let config = {
   autoCenter: true,
   pixelArt: true,
   plugins: {
+    global: [NineSlice.Plugin.DefaultCfg],
     scene: [
       {
         key: "gridEngine",

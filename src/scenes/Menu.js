@@ -14,13 +14,7 @@ class Menu extends Phaser.Scene {
             duration: 3500,
             ease: "Quad.easeIn",
         });       
-
-        this.createAnimations('up', 90, 92);
-        this.createAnimations('right', 78, 80);
-        this.createAnimations('down', 54, 56);
-        this.createAnimations('left', 66, 68);
-
-        this.startButton = new TextButton(this, game.config.width / 2, 500, "Start", { fontSize: 30 }, () => {
+        this.startButton = new TextButton(this, game.config.width / 2, 500, "Start", { fontSize: 30 }, "button_background",() => {
 
            
             this.cameras.main.fadeOut(1500);
@@ -28,8 +22,8 @@ class Menu extends Phaser.Scene {
                 this.scene.start("Office");
             });
         }).setOrigin(0.5);
-        this.tutorialButton = new TextButton(this, game.config.width / 2, 550, "Options", { fontSize: 20 }, () => { }).setOrigin(0.5);
-        this.creditsButton = new TextButton(this, game.config.width / 2, 600, "Credits", { fontSize: 22 }, () => { }).setOrigin(0.5);
+        this.tutorialButton = new TextButton(this, game.config.width / 2, 550, "Options", { fontSize: 20 },"button_background",() => { }).setOrigin(0.5);
+        this.creditsButton = new TextButton(this, game.config.width / 2, 600, "Credits", { fontSize: 22 },"button_background", () => { }).setOrigin(0.5);
 
         this.tweenButtons();
     }
@@ -54,20 +48,4 @@ class Menu extends Phaser.Scene {
             duration: 1500
         });
     }
-
-    createAnimations(name, startFrame, endFrame) {
-
-        this.anims.create({
-            key: name,
-            frames: this.anims.generateFrameNumbers("playerAnims", {
-                start: startFrame,
-                end: endFrame,
-            }),
-            frameRate: 10,
-            repeat: -1,
-            yoyo: true,
-        });
-    }
-
-
 }

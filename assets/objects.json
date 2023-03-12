@@ -1,45 +1,42 @@
 [
     {
-        "name": "Sign",
-        "description": "It says gibberish.",
-        "forensics": ""
-
-    },
-    {
-        "name": "Sign2",
-        "description": "It says random words.",
+        "name": "Whiskey Glass",
+        "description": "A spirits glass, decorated with old-fashioned crisscross patterns. It is dirty, with murky residue along the lip.",
         "forensics": ""
     },
     {
-        "name": "whiskey glass",
-        "description": "has traces of arsenic"
+        "name": "Playing Cards",
+        "description": "An ordinary set of black and red playing cards. They appear unused, lacking the typical wear on the edges and tarnishing on the faces.",
+        "forensics": ""
     },
     {
-        "name": "playing cards",
-        "description": "playing alone? suspicious"
+        "name": "Newspaper",
+        "description": "An incomplete crossword puzzle spreads across the front page. One of the hints reads: ‘7 down is death’. The writer’s solutions are barely legible, with letters of varying sizes filling each box.",
+        "forensics": ""
     },
     {
-        "name": "newspaper",
-        "description": "Has an unsolved crossword puzzle."
+        "name": "Suicide Note",
+        "description": "A haphazard, frantic farewell. The scribbles are inconsistent but show sophisticated penmanship. The page is littered with cavities along the way, presumably where the unsavory mental state of the writer caused the pen to break through the paper.",
+        "forensics": ""
     },
     {
-        "name": "note",
-        "description": "Note from Thompson"
+        "name": "Dirty Money",
+        "description": "A frayed stack of cash, acclimated to frequent transportation and changing hands.",
+        "forensics": ""
     },
     {
-        "name": "Envelope",
-        "description": "Contains dirty money"
+        "name": "Whiskey Bottle",
+        "description": "A tall bottle of spirits, thick and heavy. The label is peeling, and the whiskey is clear and golden.",
+        "forensics": ""
     },
     {
-        "name": "whiskey bottle",
-        "description": "Jameson Irish whiskey, his favorite."
+        "name": "Cigarette Stubs",
+        "description": "A dark, forest-green pack of toasted cigarettes. It has the words 'LUCKY STRIKE' branded on the front.",
+        "forensics": ""
     },
     {
-        "name": "letter",
-        "description": "written to Jenny"
-    },
-    {
-        "name": "$20 bill",
-        "description": "tucked in shirt pocket"
+        "name": "Cold Soup",
+        "description": "Soup with beans and rice. A hearty meal for an ordinary person.",
+        "forensics": ""
     }
 ]

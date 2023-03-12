@@ -1,15 +1,27 @@
 {
     "image": {
-        "messageBox": "UI/dialogBox.png", 
+
+        "invSelect": "UI/Inventory_select.png",
+        "goldFrame": "UI/goldFrame.png",
+        "lock": "UI/lock.png",
+        "flatButton": "UI/flatButton.png",
+        "forensicsSlot": "UI/forensicsSlot.png",
+        "invBackground": "UI/Inventory_background.png",
+        "itemBanner":"UI/itemBanner.png",
+        "invSlot": "UI/Inventory_Slot.png",
+        "banner": "UI/banner.png",
+        "window" : "UI/window.png",
+        "exclamation" : "UI/exclamation.png",
+        "dialogBox": "UI/dialogBox.png", 
+        "backPressedButton": "UI/backPressedArrow.png",
         "backButton": "UI/backArrow.png",
         "exitPressedButton" : "UI/exitPressedButton.png",
         "exitButton" : "UI/exitButton.png",
         "mailPaper" : "UI/mailPaper.png",
-        "box": "UI/box.png",
         "button_background": "UI/button_background.png",
         "env_closed": "UI/envelope_sealed.png",
         "env_opened": "UI/envelope_unsealed.png",
-        "portrait_frame": "UI/Frame14.png",
+        "portrait_frame": "UI/pixelFrame.png",
         "player_portrait": "UI/player_portrait.png",
         "folder": "UI/yellow_folder.png"
     },
@@ -17,11 +29,11 @@
         "button_click": "audio/button_click.wav"
     },
     "spritesheet": {
-        "playerAnims": [
-            "player/characters.png",
+        "detectiveAnims": [
+            "player/detective.png",
             {
-                "frameWidth": 52,
-                "frameHeight": 72
+                "frameWidth": 64,
+                "frameHeight": 64
             }
         ],
         "Serene_Village": [

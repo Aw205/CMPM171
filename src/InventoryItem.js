@@ -20,11 +20,20 @@ class InventoryItem extends Phaser.GameObjects.Image{
 
         this.on("pointerdown", (pointer, localX, localY) => {
 
+            Inventory.selectedItem = this.item;
+            Inventory.selectFrame.setPosition(this.parentContainer.x,this.parentContainer.y);
+            Inventory.selectFrame.setVisible(true);
+           
+            
+            this.scene.events.emit("updateItemPanel");
+
             this.parentContainer.parentContainer.bringToTop(this.parentContainer);
             this.parentContainer.startX = this.parentContainer.x;
             this.parentContainer.startY = this.parentContainer.y;
             this.parentContainer.disableInteractive();
             this.setOrigin((64 - localX) / 64, (64 - localY) / 64); //16 is size of item texture
+
+            this.parentContainer.parentContainer.bringToTop(Inventory.selectFrame);
         });
 
         this.on("drag", (pointer, dragX, dragY) => {
@@ -35,12 +44,24 @@ class InventoryItem extends Phaser.GameObjects.Image{
             if (target.item != null) {
                 return;
             }
+
+            if(this.parentContainer == Inventory.forensicsSlotPointer){
+                Inventory.forensicsSlotPointer = target;
+            }
+            else if(target == Inventory.forensicsSlotPointer){
+                Inventory.forensicsSlotPointer = this.parentContainer;
+            }
+
             let targetPos = [target.x, target.y];
             target.setPosition(this.parentContainer.startX, this.parentContainer.startY);
             this.parentContainer.setPosition(targetPos[0], targetPos[1]);
             this.parentContainer.startX = targetPos[0];
             this.parentContainer.startY = targetPos[1];
             this.parentContainer.setInteractive();
+
+            Inventory.selectFrame.setPosition(this.parentContainer.x,this.parentContainer.y);
+
+
         });
         this.on("pointerup", () => {
             this.parentContainer.setPosition(this.parentContainer.startX, this.parentContainer.startY);

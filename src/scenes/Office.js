@@ -7,16 +7,19 @@ class Office extends Phaser.Scene {
     create() {
 
         this.tw = new Typewriter(this, 100, 100);
-        this.tw.writeBitmapText("New York \n\n 1937"); 
-        
+        this.tw.writeBitmapText("New York \n\n 1937");
+
         this.time.delayedCall(3000, () => {
-            this.player = new Player(this, 0, 0, "playerAnims");
+            this.player = new Player(this, 0, 0, "detectiveAnims");
             this.objectMap = this.createObjectMap();
             this.createMap();
             this.createGridEngine();
             this.cameras.main.fadeIn(500);
             this.cameras.main.startFollow(this.player, false, 0.2, 0.2);
             this.cameras.main.setBounds(44, 0, this.map.widthInPixels - 88, this.map.heightInPixels - 64);
+
+            this.createTween();
+
 
         });
     }
@@ -57,6 +60,8 @@ class Office extends Phaser.Scene {
                 this.events.on(playerInteractEvent, () => {
                     this.scene.pause().run("Mailbox");
                 });
+                this.ex = this.add.image(obj.x, obj.y, "exclamation").setScale(2, 2);
+                this.ex.setDepth(100);
                 obj.setVisible(false);
             }
             else if (obj.name == "Desk2") {
@@ -91,7 +96,7 @@ class Office extends Phaser.Scene {
                 {
                     id: "player",
                     sprite: this.player,
-                    walkingAnimationMapping: 6,
+                    walkingAnimationMapping: 0,
                     startPosition: { x: 5, y: 3 },
                 },
             ],
@@ -114,4 +119,27 @@ class Office extends Phaser.Scene {
         return objectMap;
     }
 
+    createTween() {
+
+        this.mailNotifTween = this.tweens.add({
+            targets: this.ex,
+            y: this.ex.y - 15,
+            ease: "Linear",
+            yoyo: true,
+            duration: 1000,
+            repeat: -1
+
+        });
+        this.events.on("readAllMail", () => {
+            this.mailNotifTween.pause();
+            this.ex.setVisible(false);
+
+        });
+        this.events.on("mailNotif",()=>{
+            this.mailNotifTween.resume();
+            this.ex.setVisible(true);
+
+        })
+
+    }
 }

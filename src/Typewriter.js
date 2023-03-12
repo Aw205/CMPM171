@@ -37,10 +37,10 @@ class Typewriter {
         });
     }
 
-    write(text) {
+    write(text, delayVal = 50) {
 
         this.text = text;
-        this.label = this.scene.add.text(this.x, this.y, '').setWordWrapWidth(480);
+        this.label = this.scene.add.text(this.x, this.y, '',{fontFamily: "mono",fontSize: "16px"}).setWordWrapWidth(480);
         let textArr = this.label.getWrappedText(text).join('\n');
 
         let i = 0;
@@ -49,7 +49,7 @@ class Typewriter {
                 this.label.text += textArr[i++]
             },
             repeat: textArr.length - 1,
-            delay: 50
+            delay: delayVal
         });
     }
 

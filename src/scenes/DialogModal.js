@@ -6,15 +6,13 @@ class DialogModal extends Phaser.Scene {
 
     create(data) {
 
-        this.typewriter = new Typewriter(this, 60, 380);
+        this.typewriter = new Typewriter(this, 100, 370);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown-SPACE', this.#onKeyDownSpace, this);
-        this.add.image(0, 350, "box").setOrigin(0, 0).setScale(0.5, 0.5);
-        //this.add.image(0, 350, "messageBox").setOrigin(0, 0).setScale(2,2);
-
+        this.add.nineslice(90,350,318,78,"dialogBox",7).resize(450,120);
         this.sectionIndex = 0;
         this.textArr = data.text.split("\\");
-        this.typewriter.write(this.textArr[0]);
+        this.typewriter.write(this.textArr[0],25);
     }
 
     #onKeyDownSpace() {

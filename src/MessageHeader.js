@@ -12,7 +12,7 @@ class MessageHeader extends Phaser.GameObjects.Graphics {
         this.closeIcon = this.scene.add.image(this.x+5,this.y-5,"env_closed").setOrigin(0,0).setVisible(true);
         this.openIcon = this.scene.add.image(this.x+5,this.y-5,"env_opened").setOrigin(0,0).setVisible(false);
 
-        this.text = this.scene.add.bitmapText(this.x+40,this.y+10,"clean",title);
+        this.text = this.scene.add.bitmapText(this.x+40,this.y+10,"peaberry",title);
         this.text.setOrigin(0,0);
 
     }
@@ -30,9 +30,16 @@ class MessageHeader extends Phaser.GameObjects.Graphics {
 
     #createListeners(){
 
-        this.on("pointerdown", () => {
+        this.once("pointerdown",()=>{
             this.openIcon.setVisible(true);
             this.closeIcon.setVisible(false);
+            this.scene.numOpened++;
+            if(this.scene.numOpened == this.scene.mailNum){
+                this.scene.scene.get("Office").events.emit("readAllMail")
+            }
+        });
+
+        this.on("pointerdown", () => {
             this.scene.scene.pause("Mailbox").run("MessageModal",{text: this.messageBody});
         });
 

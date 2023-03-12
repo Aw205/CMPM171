@@ -1,11 +1,12 @@
-class TextButton extends Phaser.GameObjects.Text{
+class BitmapTextButton extends Phaser.GameObjects.BitmapText{
 
-    constructor(scene,x,y,text,style,img,callback){
+    constructor(scene,x,y,font,text,img,callback){
 
-        super(scene,x,y,text,style);
+        super(scene,x,y,font,text);
 
-        this.img = this.scene.add.image(x,y,img).setScale(4,4);
-        this.setColor("#ADD8E6");
+        this.img = this.scene.add.nineslice(x-5,y+3,34,10,img,3);
+        this.img.setOrigin(0,0).resize(this.width+10,25);
+        //this.img = this.scene.add.image(x-5,y+3,img).setDisplaySize(this.width+10,25).setOrigin(0,0);
         this.callback = callback;
         this.setInteractive({useHandCursor: true})
             .on("pointerdown", ()=> this.#onClick())
@@ -21,15 +22,15 @@ class TextButton extends Phaser.GameObjects.Text{
       }
 
       #enterButtonHoverState() {
-        this.setStyle({ fill: "#ffff00"});
+        this.setTint(0xffff00);
       }
     
       #enterButtonRestState() {
-        this.setStyle({ fill: "#ADD8E6"});
+        this.setTint(0xffffff);
       }
     
       #enterButtonActiveState() {
-        this.setStyle({ fill: '#0ff' });
+        //this.setStyle({ fill: '#0ff' });
       }
 
 }
