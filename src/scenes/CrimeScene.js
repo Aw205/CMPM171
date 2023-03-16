@@ -19,7 +19,10 @@ class CrimeScene extends Phaser.Scene {
 
         let exitKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
         exitKey.on("down", () => {
-            this.scene.stop().resume("Office");
+            this.scene.stop();
+            this.scene.run("Office");
+           
+            //this.scene.stop().resume("CaseScene");
         });
 
         // this.events.on("wake", (data) => {

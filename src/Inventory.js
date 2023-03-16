@@ -39,6 +39,7 @@ class Inventory extends Phaser.GameObjects.Container {
     }
 
     addItem(item) {
+        
         let emptySlots = this.getAll("item", null);
         emptySlots[0].addItem(item);
 
