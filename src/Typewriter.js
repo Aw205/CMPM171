@@ -37,11 +37,14 @@ class Typewriter {
         });
     }
 
-    write(text, delayVal = 50) {
+    write(text, delayVal = 50,wrapWidth = 480) {
 
         this.text = text;
-        this.label = this.scene.add.text(this.x, this.y, '',{fontFamily: "mono",fontSize: "16px"}).setWordWrapWidth(480);
-        let textArr = this.label.getWrappedText(text).join('\n');
+        this.label = this.scene.add.text(this.x, this.y, '',{fontFamily: 'mono'}).setWordWrapWidth(wrapWidth);
+
+        this.label.setFixedSize(2000,200); //fixed issue??
+
+        let textArr = this.label.getWrappedText(text).join('\n'); // needs some fix
 
         let i = 0;
         this.scene.time.addEvent({

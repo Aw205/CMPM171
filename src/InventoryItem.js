@@ -13,6 +13,8 @@ class InventoryItem extends Phaser.GameObjects.Image{
         this.label = this.scene.add.bitmapText(0,0,"peaberry",this.name);
         this.label.setOrigin(0,0);
         this.label.setVisible(false);
+
+        this.isUnlocked = false;
     }
 
 
@@ -20,7 +22,7 @@ class InventoryItem extends Phaser.GameObjects.Image{
 
         this.on("pointerdown", (pointer, localX, localY) => {
 
-            Inventory.selectedItem = this.item;
+            Inventory.selectedItem = this;
             Inventory.selectFrame.setPosition(this.parentContainer.x,this.parentContainer.y);
             Inventory.selectFrame.setVisible(true);
            

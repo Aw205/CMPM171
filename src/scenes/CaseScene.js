@@ -11,8 +11,8 @@ class CaseScene extends Phaser.Scene {
         portrait.setInteractive({ useHandCursor: true });
         
         portrait.on("pointerdown", () => {
-            this.scene.stop("Office");
-            this.scene.stop().run("GameScreen");
+            this.scene.sleep("Office");
+            this.scene.stop().run("CrimeScene");
         });
 
         this.add.bitmapText(130,150,"peaberry","Crime Scene");

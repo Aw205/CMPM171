@@ -1,32 +1,82 @@
 [
     {
         "name": "Lord Reynard",
-        "bio": "- British Philanthropist\n- dislikes the Mayor\n-doesn't trust the police\n- Wants to rid corruption",
-        "transcript": "I actually don’t even know Thompson that well.\n I spend most of my time dealing with my business overseas and looking at real estate.\nThough I suspect most people as rich as Thompson have something to hide.  "
+        "bio": "Lord Reynard is a British philanthropist and businessman. He is known in political circles for his patronage of anti-corruption candidates. Rumor says he does not have a favorable view of police.",
+        "transcript": [ "How well did you know Thompson?",
+                        "I actually don’t know Thompson particularly well.",
+                        "You’re a lord, what do you occupy yourself with?",
+                        "I spend most of my valuable time dealing with overseas business and private investments.",
+                        "Do you know what Thompson was up to and if he was doing something illegal?",
+                        "No, though most people like Thompson have something to hide.",
+                        "Do you have any knowledge on how Thompson makes his money?",
+                        "He owns a number of factories in various industries but a campaign doesn’t pay for itself.",
+                        "How do you think the election will change now that Thompson is dead?",
+                        "I’ve never fancied the Mayor but his position is now secure unless he has a new challenger",
+                        "Where were you last Friday night?",
+                        "I was at my manor the entire week, just ask my staff."
+                    ]           
     },
     {
         "name": "Mayor Crowley",
-        "bio": "- Rivals with Thompson\n - visits Thompson often\n  - gone out all night, no alibi\n - Wants to continue being Mayor",
-        "transcript": "Such a shame this happened right before our election.\n If I knew this would happen, I wouldn’t have poured so much money into my campaign."
+        "bio": "Mayor Crowley is the incumbent mayor of the city. He is seeking reelection and running against Thompson. The two are known to associate with each other.",
+        "transcript": [ "Have you heard about Thompson’s suicide?",
+                        "Such a shame this happened right before our election. I could've saved the campaign money.",
+                        "What will happen to the election now?",
+                        "It’s a real disruption in the democratic process but I guess I will keep the position until someone else decides to run.",
+                        "What was your relationship with Thompson?",
+                        "I’m not exactly friends with Thompson, but I wouldn’t call us enemies.",
+                        "When’s the last time you saw him?",
+                        "I’d visit him occasionally for a drink, but I have not done so in the past month.",
+                        "Where were you last Friday night?",
+                        "Where was I that night? I was out for a drink or two, maybe with Faust. Can’t really remember."
+                    ]
     },
     {
         "name": "Commander Pike",
-        "bio": "- Endorsed by the Mayor\n- Jacob’s Boss (your grand boss?)\n- dislikes Thompson\n- Wants to get promoted to Chief",
-        "transcript": "I never liked Thompson, I think the world is better off without war profiteers like him.\nNow I’m never getting promoted to Commissioner because of the Mayor. "
+        "bio": "Commander Pike is the commander of one of the districts of the city. They’re endorse and supported by the mayor, and are responsible for assigning Detective Jacobs to the case. Word on the street is that they’re in the mood for a promotion.",
+        "transcript": [ "What did you think of Thompson?",
+                        "I never liked the guy, the world is better off without war profiteers like him.",
+                        "Are there any repercussions to Thompson’s death?",
+                        "Now I’m never getting promoted to Commissioner because the Mayor has to deal with this.",
+                        "Do you have an alibi for the time of Thompson’s death?",
+                        "Alibi? I am the police!",
+                        "Do you have any ideas why Thompson killed himself?",
+                        "Why are you even questioning me? Its a suicide! Now if you’ll stop wasting my time I have more important matters to attend to."
+                    ]
     },
     {
         "name": "Professor Bates",
-        "bio": "- visits friend Thompson often\n- has gambling problem\n- suspects Faust as untrustworthy\n- Wants to get rich fast",
-        "transcript": "Last time I killed someone was when I was fighting in The Great War!\nThompson is my brother in arms! Why would I kill him?"
+        "bio": "Professor Bates earned his moniker by his use of numbers to enhance his gambling odds. He’s known to be friends from Thompson since The Great War. Besides gambling Bates has found himself in a number of various get rich quick schemes with various poor outcomes.",
+        "transcript": [ "What was your relationship with Thompson?",
+                        "We’re old friends from the war. We were supposed to be getting into some business together.",
+                        "What kind of business did you do with Thompson?",
+                        "He was nice enough to loan me some money for my “problem” We were just talking about some ways for me to settle my debt to him.",
+                        "When's the last time you saw him?",
+                        "We get drinks and reminisce about the war fairly often. We actually met pretty recently. Just before….",
+                        "Was he acting strange or has had any suicidal tendencies?",
+                        "Not really, I can’t recall. But I remember he was annoyed that some guy kept trying to buy him out. I did win some money from him that night, not that it would make him kill himself…."
+                    ]
     },
     {
         "name": "Lady Faust",
-        "bio": "-wants Mayor to win\n- has beef with Thompson\n - spills tea on Mayor’s habits\n- Wants political power/status",
-        "transcript": "People may think I hold a grudge against Thompson, but that's just slander against foreigners like me.\nMy beef with Thompson is nothing personal, it's always just been business."
+        "bio": "Lady Faust is a public supporter of the incumbent mayor, and a prominent lady in society. She is publicly disproving of candidate Thompson and is known to trade information for power. Due to her support she often has the mayor’s ear and an inside track of city hall goings on.",
+        "transcript": [ "What did you think of Thompson?",
+                        "People may think I hold a grudge against Thompson, but that's just gossip.",
+                        "Weren’t you directly opposed to Thompson?",
+                        "My beef with Thompson is nothing personal, it's always just been business. When in history has it been about anything but?",
+                        "Didn’t you have a bit of a conflict of interest with Thompson?",
+                        "Let’s just say that we were in somewhat of an “arms race”. Come back when you got some real evidence, you are wasting my time."
+                    ]
     },
     {
         "name": "Jenny",
-        "bio": " - Thompson’s mistress\n- reluctant to talk to player\n - visits Thompson often\n - dislikes Everyone, knows drugs",
-        "transcript": "I don't talk to cops\nFine, I don’t know anything about those elite psychopaths.\nThompson is my least favorite client, I hated seeing him. Are we done?"
+        "bio": "Jenny is a streetwalker, but not a particularly well known one. Due to the caliber of her clientele she’s rather tight lipped and information is mostly scarce or fleeting. She has been seen talking once or twice with Thompson.",
+        "transcript": [ "Do you know anything about the death of Thompson?",
+                        "I don't talk to cops.",
+                        "Do you have any knowledge of Thompson’s friends?",
+                        "No, I don’t know anything about those elite psychopaths.",
+                        "What was your relationship with Thompson?",
+                        "Thompson is a regular at my club, I hated seeing him. Are we done?"
+                    ]
     }
 ]

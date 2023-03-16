@@ -7,16 +7,18 @@ class Menu extends Phaser.Scene {
 
     create() {
 
+        this.input.setDefaultCursor('url(assets/UI/SAxCursor.png), pointer');
+        this.add.text(0,0, "",{fontFamily: "mono"}); // just to make sure font is loaded properly
+
         this.text = this.add.bitmapText(game.config.width/2,100,"clean","Out of Depth").setFontSize(48).setOrigin(0.5,0).setAlpha(0);
         this.tweens.add({
             targets: this.text,
             alpha: 1,
             duration: 3500,
             ease: "Quad.easeIn",
-        });       
-        this.startButton = new TextButton(this, game.config.width / 2, 500, "Start", { fontSize: 30 }, "button_background",() => {
-
-           
+        }); 
+          
+        this.startButton = new TextButton(this, game.config.width / 2, 500, "Start", {fontSize: 30 }, "button_background",() => {
             this.cameras.main.fadeOut(1500);
             this.cameras.main.once("camerafadeoutcomplete", () => {
                 this.scene.start("Office");

@@ -6,7 +6,6 @@ class BitmapTextButton extends Phaser.GameObjects.BitmapText{
 
         this.img = this.scene.add.nineslice(x-5,y+3,34,10,img,3);
         this.img.setOrigin(0,0).resize(this.width+10,25);
-        //this.img = this.scene.add.image(x-5,y+3,img).setDisplaySize(this.width+10,25).setOrigin(0,0);
         this.callback = callback;
         this.setInteractive({useHandCursor: true})
             .on("pointerdown", ()=> this.#onClick())

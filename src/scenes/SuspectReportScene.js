@@ -9,15 +9,16 @@ class SuspectReportScene extends Phaser.Scene {
         this.info = data.suspectInfo;
         this.add.nineslice(75,65,46, 46,'window',7).resize(520,400);
         this.#createBio();
-        this.#createTranscript();
+        //this.#createTranscript();
         this.#createPortrait();
         new ImageButton(this, 100, 90, "backButton", undefined, "backPressedButton", () => {
             this.scene.stop().run("SuspectSelectionScene");
         }).setScale(2);
-
         new ImageButton(this, 560, 90, "exitButton", undefined, "exitPressedButton", () => {
             this.scene.stop().run("Office");
         }).setScale(2);
+
+        this.#createInterrogateButton();
 
     }
 
@@ -38,6 +39,16 @@ class SuspectReportScene extends Phaser.Scene {
         let nameBanner = this.add.nineslice(110,90,30,16,"banner",5);
         let t =this.add.bitmapText(120, 90,"peaberry",this.info.name);
         nameBanner.resize(t.width+20,32);
+
+    }
+
+    #createInterrogateButton(){
+
+        this.interrogateButton = new BitmapTextButton(this,280,400,"peaberry","Interrogate","flatButton", () => {
+           this.scene.stop().run("InterrogationScene",{transcript: this.info.transcript});
+        });
+
+
 
     }
 }

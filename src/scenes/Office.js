@@ -10,6 +10,7 @@ class Office extends Phaser.Scene {
         this.tw.writeBitmapText("New York \n\n 1937");
 
         this.time.delayedCall(3000, () => {
+            
             this.player = new Player(this, 0, 0, "detectiveAnims");
             this.objectMap = this.createObjectMap();
             this.createMap();
@@ -78,7 +79,7 @@ class Office extends Phaser.Scene {
                 obj.info = this.objectMap.get(obj.name);
                 this.events.on(playerInteractEvent, () => {
 
-                    this.scene.pause().run("DialogModal", { text: this.objectMap.get(obj.name).description });
+                    this.scene.pause().run("DialogModal", { text: obj.info.commentary, scene: "Office" });
                     this.scene.get("InventoryScene").events.emit("itemPicked", obj);
                     obj.destroy();
                     obj = null;

@@ -20,6 +20,7 @@ class InventoryScene extends Phaser.Scene {
                         "Forensics Analysis",
                         `Hello Detective,\n The forensics lab has finished its analysis on the ${itemName}. Good luck!`);
                     Inventory.forensicsSlotPointer.item.setVisible(true);
+                    Inventory.forensicsSlotPointer.item.isUnlocked = true;
                 });
             }
         });
@@ -33,9 +34,10 @@ class InventoryScene extends Phaser.Scene {
         });
 
         this.events.on("updateItemPanel", () => {
-            this.itemImage.setTexture(Inventory.selectedItem.texture,Inventory.selectedItem.frame.name);
-            this.itemDescription.setText(Inventory.selectedItem.info.description);
-            this.itemName.setText(Inventory.selectedItem.info.name);
+            this.itemImage.setTexture(Inventory.selectedItem.item.texture,Inventory.selectedItem.item.frame.name);
+            this.itemDescription.setText(Inventory.selectedItem.item.info.description);
+            this.itemName.setText(Inventory.selectedItem.item.info.name);
+            this.setForensicsDescription(Inventory.selectedItem);
             this.itemBanner.resize(this.itemName.width+20,32);
             
         });
@@ -53,8 +55,20 @@ class InventoryScene extends Phaser.Scene {
         this.itemName = this.add.bitmapText(420 - 60,130,"peaberry",""); //max width 240
         //this.itemDescription = this.add.bitmapText(410 - 50, 250, "clean","",8);
         this.itemDescription = this.add.text(410 - 60, 250, "",{fontFamily: "mono",fontSize: "16px"}).setWordWrapWidth(260);
+
         this.add.nineslice(410 - 60,340,48,48,"goldFrame",9).resize(260,70);
-        this.add.image(540 - 60,375,"lock").setScale(2,2);
-        //this.forensicsDescription = this.add.bitmapText();
+        this.forensicsLock = this.add.image(540 - 60,375,"lock").setScale(2,2);
+        this.forensicsDescription = this.add.text(410 - 55, 340, "",{fontFamily: "mono",fontSize: "16px"}).setWordWrapWidth(240);
+    }
+
+    setForensicsDescription(invItem){
+
+        if(invItem.isUnlocked){
+            this.forensicsLock.setVisible(false);
+            this.forensicsDescription.setText(invItem.item.info.forensics);
+            return;
+        }
+        this.forensicsLock.setVisible(true);
+        this.forensicsDescription.setText("");
     }
 }

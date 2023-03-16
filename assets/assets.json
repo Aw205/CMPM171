@@ -1,6 +1,8 @@
 {
     "image": {
 
+        "pixelFrame2": "UI/pixelFrame2.png",
+        "cursor": "UI/sAxCursor.png",
         "invSelect": "UI/Inventory_select.png",
         "goldFrame": "UI/goldFrame.png",
         "lock": "UI/lock.png",
@@ -49,7 +51,15 @@
                 "frameWidth": 64,
                 "frameHeight": 64
             }
+        ],
+        "OfficeCrime": [
+            "map/OfficeCrime.png",
+            {
+                "frameWidth": 64,
+                "frameHeight": 64
+            }
         ]
+
     },
     "json": {
         "dialogs": "dialog.json",
@@ -67,6 +77,7 @@
     },
     "tilemapTiledJSON": {
         "tilemap": "map/tempMap.json",
-        "office": "map/OfficeMap.json"
+        "office": "map/OfficeMap.json",
+        "crime1": "map/CrimeMap.json"
     }
 }

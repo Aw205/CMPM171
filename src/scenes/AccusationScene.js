@@ -7,14 +7,16 @@ class AccusationScene extends Phaser.Scene {
     create() {
 
         this.index = 0;
+        this.motiveIndex = 0;
         this.add.nineslice(75,65,46,46,'window',7).resize(520,400);
         this.names = ["Lord Reynard","Mayor Crowley","Commander Pike","Professor Bates","Lady Faust","Jenny"];
+        this.motives = ["Threat","Conspiracy","Cover-up","Collusion","Political Assassination","Hatred"];
 
         new ImageButton(this, 560, 90, "exitButton", undefined, "exitPressedButton", () => {
             this.scene.stop().run("Office");
         }).setScale(2);
 
-        new ImageButton(this, 110, 280, "backButton", undefined, "backPressedButton", () => {
+        new ImageButton(this, 260, 215, "backButton", undefined, "backPressedButton", () => {
             if(this.index == 0){
                 this.index= 6;
             }
@@ -22,12 +24,31 @@ class AccusationScene extends Phaser.Scene {
             this.nameBanner.resize(this.name.width+20,32);
         }).setScale(2);
 
-        new ImageButton(this, 560, 280, "backButton", undefined, "backPressedButton", () => {
+        new ImageButton(this, 435, 215, "backButton", undefined, "backPressedButton", () => {
             if(this.index == 5){
                 this.index = -1;
             }
             this.name.setText(this.names[++this.index]);
             this.nameBanner.resize(this.name.width+20,32);
+        }).setScale(2).setFlip(true,false);
+
+        let forwardMotive = new ImageButton(this, 260, 370, "backButton", undefined, "backPressedButton", () => {
+
+            if(this.motiveIndex == 5){
+                this.motiveIndex = -1;
+            }
+            this.motive.setText(this.motives[++this.motiveIndex]);
+           
+           
+        }).setScale(2);
+
+        let backMotive = new ImageButton(this, 435, 370, "backButton", undefined, "backPressedButton", () => {
+
+            if(this.motiveIndex == 0){
+                this.motiveIndex= 6;
+            }
+            this.motive.setText(this.motives[--this.motiveIndex]);
+           
         }).setScale(2).setFlip(true,false);
 
         this.confirmButton = new TextButton(this, 330, 420, "Confirm", null, "button_background",() => {
@@ -46,7 +67,7 @@ class AccusationScene extends Phaser.Scene {
         this.name = this.add.bitmapText(120, 90,"peaberry",this.names[this.index]);
         this.nameBanner.resize(this.name.width+20,32)
 
-        this.motive = this.add.bitmapText(310, 340,"peaberry","Motive: ");
+        this.motive = this.add.bitmapText(340, 340,"peaberry","Motive: ").setOrigin(0.5,0.5);
         this.add.image(280,150, "portrait_frame").setOrigin(0, 0).setScale(1.5,1.5);
         this.portrait = this.add.image(285, 170, "player_portrait").setOrigin(0, 0).setScale(3, 3);
     }

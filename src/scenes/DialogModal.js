@@ -6,6 +6,9 @@ class DialogModal extends Phaser.Scene {
 
     create(data) {
 
+        this.scene.bringToTop();
+        this.prevScene = data.scene;
+
         this.typewriter = new Typewriter(this, 100, 370);
         this.cursors = this.input.keyboard.createCursorKeys();
         this.input.keyboard.on('keydown-SPACE', this.#onKeyDownSpace, this);
@@ -24,7 +27,7 @@ class DialogModal extends Phaser.Scene {
             this.typewriter.clearText();
             return this.typewriter.write(this.textArr[++this.sectionIndex]);
         }
-        this.scene.stop().resume("Office");
+        this.scene.stop().resume(this.prevScene);
     }
 
 }

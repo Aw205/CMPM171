@@ -2,41 +2,49 @@
     {
         "name": "Whiskey Glass",
         "description": "A spirits glass, decorated with old-fashioned crisscross patterns. It is dirty, with murky residue along the lip.",
-        "forensics": ""
+        "forensics": "Traces of arsenic detected in the alcohol.",
+        "commentary": "If there was ever a time to have a drink, it’d be now."
     },
     {
         "name": "Playing Cards",
         "description": "An ordinary set of black and red playing cards. They appear unused, lacking the typical wear on the edges and tarnishing on the faces.",
-        "forensics": ""
+        "forensics": "Fingerprints were found on the cards. They belong to Professor Bates.",
+        "commentary": "Looks like things weren’t coming up aces for Thompson."
     },
     {
         "name": "Newspaper",
         "description": "An incomplete crossword puzzle spreads across the front page. One of the hints reads: ‘7 down is death’. The writer’s solutions are barely legible, with letters of varying sizes filling each box.",
-        "forensics": ""
+        "forensics": "Heavy pen markings litter the newspaper. The current year is circled: 1937.",
+        "commentary": "7 across is death. Someone at the tabloids must be upset."
     },
     {
         "name": "Suicide Note",
         "description": "A haphazard, frantic farewell. The scribbles are inconsistent but show sophisticated penmanship. The page is littered with cavities along the way, presumably where the unsavory mental state of the writer caused the pen to break through the paper.",
-        "forensics": ""
+        "forensics": "Written with heavy cursive using a light pen. The signature appears to differ from Thompson’s.",
+        "commentary": "These days, any reason is a good reason."
     },
     {
         "name": "Dirty Money",
         "description": "A frayed stack of cash, acclimated to frequent transportation and changing hands.",
-        "forensics": ""
+        "forensics": "These bills were marked,traced back to the First National Bank Robbery.",
+        "commentary": "It's a clean job, but he was paid dirty money for it."
     },
     {
         "name": "Whiskey Bottle",
         "description": "A tall bottle of spirits, thick and heavy. The label is peeling, and the whiskey is clear and golden.",
-        "forensics": ""
+        "forensics": "This drink was laced with arsenic. Not a lot, but enough to cause fatal damage.",
+        "commentary": "Jameson, as Irish as a potato famine. Or the accent."
     },
     {
         "name": "Cigarette Stubs",
         "description": "A dark, forest-green pack of toasted cigarettes. It has the words 'LUCKY STRIKE' branded on the front.",
-        "forensics": ""
+        "forensics": "These contain 17 milligrams of nicotine, a strong amount, but not dangerous.",
+        "commentary": "Feels like I’ve been seeing that brand everywhere. That or I’ve lost it."
     },
     {
         "name": "Cold Soup",
         "description": "Soup with beans and rice. A hearty meal for an ordinary person.",
-        "forensics": ""
+        "forensics": "Nothing unusual was detected. It’s just a soup can.",
+        "commentary": "Who eats soup cold?"
     }
 ]

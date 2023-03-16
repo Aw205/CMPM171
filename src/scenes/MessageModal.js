@@ -6,11 +6,12 @@ class MessageModal extends Phaser.Scene {
 
     create(data) {
 
-        this.add.image(205, 155, "mailPaper").setScale(5, 5).setOrigin(0, 0);
-        this.add.bitmapText(215, 180, "peaberry", data.text).setMaxWidth(235).setFontSize(14).setTint(0x4e372e);
-        new ImageButton(this, 420, 165, "exitButton", undefined, "exitPressedButton", () => {
+        this.add.image(160, 70, "mailPaper").setScale(7, 7).setOrigin(0, 0);
+        let text =  this.add.text(185,100,data.text,{fontFamily: 'mono', color: '0'});
+        text.setWordWrapWidth(270);
+        new ImageButton(this, 450, 100, "exitButton", undefined, "exitPressedButton", () => {
             this.scene.stop().resume("Mailbox");
-        }).setScale(1.6);
+        }).setScale(2);
     }
 
 }
