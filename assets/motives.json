@@ -1,0 +1,44 @@
+[
+    {
+        "motive": "Threat",
+        "description": "Thompson was a threat to the killer.",
+        "optionPrompt": "Select threat",
+        "options": ["Political rival",
+                    "Business rival",
+                    "Rival lover",
+                    "Direct threat to safety"
+                ]
+    },
+    {
+        "motive": "Conspiracy",
+        "description": "Killer has deeper hidden motives. Thompson was just in the way and getting rid of him will futher a sinister plot.",
+        "optionPrompt": "Select conspiracy",
+        "options": ["International arms exportation",
+                    "Alcohol smuggling",
+                    "Illegal prostitution"
+                ]
+    },
+    {
+        "motive": "Cover-up",
+        "description": "Thompson was poisoned in a gas leak accident and the scene was made to look like a suicide."
+    },
+    {
+        "motive": "Collusion",
+        "description": "Killer colluded with another suspect to murder Thompson to take blame off the mastermind.",
+        "optionPrompt": "Select accomplice",
+        "options": ""
+    },
+    {
+        "motive": "Political Assassination",
+        "description": "Killer dislikes Thompson's agendas and killed him to send a political message."
+    },
+    {
+        "motive": "Hatred",
+        "description": "Crime of passion, killer simply hates Thompson and killed him in rage.",
+        "optionPrompt": "Select reason",
+        "options": ["Jealous of Thompson's wealth/assets",
+                    "Jealous of love interests",
+                    "Holds a deep grudge over disrespectful encounter"
+                ]
+    }
+]

@@ -86,7 +86,6 @@ class Office extends Phaser.Scene {
                     this.events.removeListener(playerInteractEvent);
                 }, this);
             }
-
         }
 
     }

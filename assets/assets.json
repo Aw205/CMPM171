@@ -38,13 +38,6 @@
                 "frameHeight": 64
             }
         ],
-        "Serene_Village": [
-            "map/Serene_Village.png",
-            {
-                "frameWidth": 16,
-                "frameHeight": 16
-            }
-        ],
         "Office": [
             "map/Office_new.png",
             {
@@ -59,11 +52,14 @@
                 "frameHeight": 64
             }
         ]
-
+    },
+    "atlas":{
+        "suspectHeadshots" : ["atlas/suspectHeadshots.png","atlas/suspect_headshots.json"]
     },
     "json": {
         "dialogs": "dialog.json",
-        "objects": "objects.json"
+        "objects": "objects.json",
+        "motives": "motives.json"
     },
     "bitmapFont": {
         "clean": [
@@ -76,7 +72,6 @@
         ]
     },
     "tilemapTiledJSON": {
-        "tilemap": "map/tempMap.json",
         "office": "map/OfficeMap.json",
         "crime1": "map/CrimeMap.json"
     }

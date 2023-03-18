@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,15 +9,28 @@
 
     <!-- <link rel="preload" as="font" href="assets/fonts/monogram.ttf" type="font/ttf" /> -->
     <style>
-        body {
-            background-color: rgb(0, 0, 0); 
+        legend {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
         }
+
+        label {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-size:small;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+
         @font-face {
             font-family: mono;
             src: url('assets/fonts/monogram.ttf');
-         } 
+        }
     </style>
 </head>
+
 <body>
     <script src="./lib/phaser.js"></script>
     <script src="./lib/GridEngine.min.js"></script>
@@ -50,6 +63,7 @@
     <script src="./src/scenes/Office.js"></script>
     <script src="./src/scenes/Menu.js"></script>
     <script src="./src/scenes/GameScreen.js"></script>
-    <script src = "./src/Main.js"></script>    
+    <script src="./src/Main.js"></script>
 </body>
+
 </html>

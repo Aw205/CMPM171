@@ -3,6 +3,7 @@
 let cursors;
 let config = {
   type: Phaser.WEBGL,
+  parent: window,
   width: 640,
   height: 480,
   resolution: window.devicePixelRatio,
@@ -17,6 +18,9 @@ let config = {
     CaseScene, AccusationScene,InterrogationScene, ConfirmationModal, WinScene,LoseScene,CrimeScene],
   scale: {
     mode: Phaser.Scale.FIT,
+  },
+  dom: {
+    createContainer: true
   },
   autoCenter: true,
   pixelArt: true,

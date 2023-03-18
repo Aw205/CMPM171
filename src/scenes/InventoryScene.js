@@ -12,7 +12,8 @@ class InventoryScene extends Phaser.Scene {
         let forensicsWindow = this.add.nineslice(100 - 60,320,46,46,'window',7).resize(300,70);
         this.forensicsButton = new BitmapTextButton(this,190 - 60,340,"peaberry","Send to Forensics","flatButton", () => {
 
-            if (Inventory.forensicsSlotPointer.item != null) {
+            if (Inventory.forensicsSlotPointer.item != null && this.forensicsCounter!= this.forensicsCounter.max) {
+                this.forensicsCounter.updateCounter();
                 let itemName = Inventory.forensicsSlotPointer.item.item.info.name;
                 Inventory.forensicsSlotPointer.item.setVisible(false);
                 this.scene.get("Office").time.delayedCall(5000, () => {
@@ -24,6 +25,14 @@ class InventoryScene extends Phaser.Scene {
                 });
             }
         });
+
+        this.forensicsCounter = this.add.bitmapText(350 - 60, 340,"peaberry","0/5").setTint(0xfdfd96);
+        this.forensicsCounter.count = 0;
+        this.forensicsCounter.max = 5;
+        this.forensicsCounter.updateCounter = () => {
+            this.forensicsCounter.count++;
+            this.forensicsCounter.setText(this.forensicsCounter.count + "/" + this.forensicsCounter.max);
+        };
         
         let exitKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
         exitKey.on("down", () => {
@@ -54,11 +63,11 @@ class InventoryScene extends Phaser.Scene {
         this.itemImage = this.add.image(450 - 20, config.height / 2 - 50, undefined, undefined).setOrigin(0, 0).setScale(1, 1);
         this.itemName = this.add.bitmapText(420 - 60,130,"peaberry",""); //max width 240
         //this.itemDescription = this.add.bitmapText(410 - 50, 250, "clean","",8);
-        this.itemDescription = this.add.text(410 - 60, 250, "",{fontFamily: "mono",fontSize: "16px"}).setWordWrapWidth(260);
+        this.itemDescription = this.add.text(410 - 60, 250, "",{fontFamily: "mono"}).setWordWrapWidth(260);
 
         this.add.nineslice(410 - 60,340,48,48,"goldFrame",9).resize(260,70);
         this.forensicsLock = this.add.image(540 - 60,375,"lock").setScale(2,2);
-        this.forensicsDescription = this.add.text(410 - 55, 340, "",{fontFamily: "mono",fontSize: "16px"}).setWordWrapWidth(240);
+        this.forensicsDescription = this.add.text(410 - 50, 340, "",{fontFamily: "mono"}).setWordWrapWidth(240).setTint(0xf8e65d);
     }
 
     setForensicsDescription(invItem){

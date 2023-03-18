@@ -35,7 +35,7 @@ class SuspectReportScene extends Phaser.Scene {
     #createPortrait() {
 
         let portrait = this.add.image(120, 130, "portrait_frame").setOrigin(0, 0).setScale(1.5,1.5);
-        let img = this.add.image(125, 150, "player_portrait").setOrigin(0, 0).setScale(3, 3);
+        let img = this.add.image(185, 165, "suspectHeadshots",this.info.name).setScale(3, 3);
         let nameBanner = this.add.nineslice(110,90,30,16,"banner",5);
         let t =this.add.bitmapText(120, 90,"peaberry",this.info.name);
         nameBanner.resize(t.width+20,32);
@@ -45,7 +45,7 @@ class SuspectReportScene extends Phaser.Scene {
     #createInterrogateButton(){
 
         this.interrogateButton = new BitmapTextButton(this,280,400,"peaberry","Interrogate","flatButton", () => {
-           this.scene.stop().run("InterrogationScene",{transcript: this.info.transcript});
+           this.scene.stop().run("InterrogationScene",{name: this.info.name, transcript: this.info.transcript});
         });
 
 
