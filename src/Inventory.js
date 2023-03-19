@@ -3,6 +3,7 @@ class Inventory extends Phaser.GameObjects.Container {
     static selectedItem = null;
     static forensicsSlotPointer = null;
     static selectFrame = null;
+    static inProgress = false;
     
     constructor(scene, x, y, children) {
         super(scene, x, y, children);

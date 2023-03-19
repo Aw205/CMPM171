@@ -23,8 +23,8 @@ class SuspectReportScene extends Phaser.Scene {
     }
 
     #createBio() {
-        this.add.nineslice(280,127,46, 46,'window',7).resize(300,140);;
-        this.add.bitmapText(280,127,"peaberry",this.info.bio).setMaxWidth(300);
+        this.add.nineslice(280,127,46, 46,'window',7).resize(300,140);
+        this.add.text(290,127,this.info.bio,{fontFamily: "mono"}).setWordWrapWidth(280);
     }
 
     #createTranscript() {
@@ -43,12 +43,8 @@ class SuspectReportScene extends Phaser.Scene {
     }
 
     #createInterrogateButton(){
-
         this.interrogateButton = new BitmapTextButton(this,280,400,"peaberry","Interrogate","flatButton", () => {
            this.scene.stop().run("InterrogationScene",{name: this.info.name, transcript: this.info.transcript});
         });
-
-
-
     }
 }

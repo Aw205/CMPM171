@@ -4,13 +4,10 @@ class Player extends Phaser.GameObjects.Sprite {
 
         super(scene, x, y, texture);
         this.scene.add.existing(this);
-        this.facingCollider = this.scene.physics.add.sprite(x, y).setSize(4, 4);
         this.createKeys();
-
     }
 
     preUpdate(time, delta) {
-
         super.preUpdate(time, delta);
 
         if (this.cursors.A.isDown) {

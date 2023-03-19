@@ -1,29 +1,43 @@
 class InventoryScene extends Phaser.Scene {
 
+    static inProgre
+
     constructor() {
         super("InventoryScene");
     }
 
     create() {
 
-        //Inventory code very messy need to clean up in future
+        //Inventory/InvScene code very very messy need to clean up in future
 
         this.add.nineslice(100 - 60,120,46, 46,'window',7).resize(300,200);
         let forensicsWindow = this.add.nineslice(100 - 60,320,46,46,'window',7).resize(300,70);
         this.forensicsButton = new BitmapTextButton(this,190 - 60,340,"peaberry","Send to Forensics","flatButton", () => {
 
-            if (Inventory.forensicsSlotPointer.item != null && this.forensicsCounter!= this.forensicsCounter.max) {
+            if(Inventory.forensicsSlotPointer.item == null){
+                return this.createFloatingText(170,320,"No item selected!");
+            }
+            else if(this.forensicsCounter == this.forensicsCounter.max){
+                return this.createFloatingText(170,320,"Max limit reached!");
+            }
+            else if(Inventory.inProgress){
+                return this.createFloatingText(170,320,"Wait! Forensics in progress");
+            } 
+            else if(Inventory.forensicsSlotPointer.item.isUnlocked){
+                return this.createFloatingText(170,320,"Analysis already completed!");
+            }
                 this.forensicsCounter.updateCounter();
                 let itemName = Inventory.forensicsSlotPointer.item.item.info.name;
                 Inventory.forensicsSlotPointer.item.setVisible(false);
+                Inventory.inProgress = true;
                 this.scene.get("Office").time.delayedCall(5000, () => {
                     this.scene.get("Mailbox").events.emit("sendMail",
                         "Forensics Analysis",
                         `Hello Detective,\n The forensics lab has finished its analysis on the ${itemName}. Good luck!`);
                     Inventory.forensicsSlotPointer.item.setVisible(true);
                     Inventory.forensicsSlotPointer.item.isUnlocked = true;
+                    Inventory.inProgress = false;
                 });
-            }
         });
 
         this.forensicsCounter = this.add.bitmapText(350 - 60, 340,"peaberry","0/5").setTint(0xfdfd96);
@@ -79,5 +93,21 @@ class InventoryScene extends Phaser.Scene {
         }
         this.forensicsLock.setVisible(true);
         this.forensicsDescription.setText("");
+    }
+
+    createFloatingText(x,y,text){
+
+        let t = this.add.bitmapText(x,y,"peaberry",text).setTint(0xFF0000);
+
+        this.add.tween({
+            targets: t,
+            y: t.y - 40,
+            ease: "Linear",
+            alpha: 0.5,
+            duration: 2000,
+            onComplete: ()=>{
+                t.destroy();
+            }
+        });
     }
 }

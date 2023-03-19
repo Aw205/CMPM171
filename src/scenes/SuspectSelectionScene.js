@@ -6,10 +6,10 @@ class SuspectSelectionScene extends Phaser.Scene {
 
     create() {
 
-        this.dlg = this.add.nineslice(75,65,46,46,'window',7);
-        this.dlg.resize(520,400);
+        this.dlg = this.add.nineslice(75, 65, 46, 46, 'window', 7);
+        this.dlg.resize(520, 400);
         this.reportMap = this.createSuspectReportMap();
-        this.names = [["Mayor Crowley","Lord Reynard"],["Professor Bates","Commander Pike"],["Lady Faust","Jenny"]];
+        this.names = [["Mayor Crowley", "Lord Reynard"], ["Professor Bates", "Commander Pike"], ["Lady Faust", "Jenny"]];
         this.#createPortraits();
 
         new ImageButton(this, 560, 90, "exitButton", undefined, "exitPressedButton", () => {
@@ -30,13 +30,19 @@ class SuspectSelectionScene extends Phaser.Scene {
                 // let t = this.add.bitmapText(120 + 150 * i, 90 + 180 * j,"peaberry",this.names[i][j]);
                 // nameBanner.resize(t.width+20,32);
 
-                let portrait = this.add.image(120 + 150 * i, 120 + 180 * j, "portrait_frame").setOrigin(0, 0).setScale(1.5,1.5);
-                let img = this.add.image(175 + 150 * i, 150 + 180 * j, "suspectHeadshots",this.names[i][j]).setScale(3, 3);
-                portrait.setInteractive({ useHandCursor: true });
-                portrait.on("pointerdown", () => {
+                let frame = this.add.image(120 + 150 * i, 120 + 180 * j, "portrait_frame").setOrigin(0, 0).setScale(1.5, 1.5);
+                frame.on("pointerover", () => {
+                    frame.setTint(0xC4D1E8);
+                });
+                frame.on("pointerout", () => {
+                    frame.clearTint();
+                });
+                let img = this.add.image(175 + 150 * i, 150 + 180 * j, "suspectHeadshots", this.names[i][j]).setScale(3, 3);
+                frame.setInteractive({ useHandCursor: true });
+                frame.on("pointerdown", () => {
                     // this.cameras.main.pan(190+150*i,190+180*j,1000,"Linear",false);
                     // this.cameras.main.zoomTo(4,1000,"Linear");
-                    this.scene.stop().run("SuspectReportScene", {suspectInfo: this.reportMap.get(this.names[i][j])});
+                    this.scene.stop().run("SuspectReportScene", { suspectInfo: this.reportMap.get(this.names[i][j]) });
                 });
             }
         }

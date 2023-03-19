@@ -19,12 +19,12 @@ class Mailbox extends Phaser.Scene {
             this.addMessage(title,body);
             this.scene.get("Office").events.emit("mailNotif");
         });
-        this.addMessage("Welcome!", `Greetings Detective,\n We extend to you a warm welcome upon your return. This has been a trying and prolonged month
+        this.addMessage("Welcome!", `Greetings Detective,\n \n We extend to you a warm welcome upon your return. This has been a trying and prolonged month
         for us. Civil strife is reaching unprecedented levels and with the political turmoil sweeping our nation, our bureau has been inundated with a variety
         of complex cases. A recent fatality has occurred on the far side of the train station. As of now, there are no indications of wrongdoing; nevertheless
         we are entrusting you with the investigation. Unearth the responsible party, and if there be one, mete out justice.\n Best of luck,\n
         Chief Inspector Johnson`);
-        this.addMessage("Controls", "Use WASD to move and E to interact.");
+        this.addMessage("Controls", " [WASD] to move \n [E] to interact, exit Inventory \n [SPACE] to continue dialog \n ");
 
     }
     createMailbox() {

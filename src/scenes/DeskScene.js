@@ -24,10 +24,10 @@ class DeskScene extends Phaser.Scene {
         this.poiFolder.setInteractive({ useHandCursor: true });
         this.caseFolder.setInteractive({ useHandCursor: true });
         this.poiFolder.on("pointerdown", () => {
-            this.scene.stop().run("SuspectSelectionScene");
+            this.scene.sleep().run("SuspectSelectionScene");
         });
         this.caseFolder.on("pointerdown", () => {
-            this.scene.stop().run("CaseScene");
+            this.scene.sleep().run("CaseScene");
         });
     }
 

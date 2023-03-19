@@ -28,7 +28,6 @@ class InventoryItem extends Phaser.GameObjects.Image{
             Inventory.selectFrame.setPosition(this.parentContainer.x,this.parentContainer.y);
             Inventory.selectFrame.setVisible(true);
            
-            
             this.scene.events.emit("updateItemPanel");
 
             this.parentContainer.parentContainer.bringToTop(this.parentContainer);

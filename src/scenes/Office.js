@@ -8,20 +8,23 @@ class Office extends Phaser.Scene {
 
         this.tw = new Typewriter(this, 100, 100);
         this.tw.writeBitmapText("New York \n\n 1937");
-
         this.time.delayedCall(3000, () => {
-            
-            this.player = new Player(this, 0, 0, "detectiveAnims");
-            this.objectMap = this.createObjectMap();
-            this.createMap();
-            this.createGridEngine();
-            this.cameras.main.fadeIn(500);
-            this.cameras.main.startFollow(this.player, false, 0.2, 0.2);
-            this.cameras.main.setBounds(44, 0, this.map.widthInPixels - 88, this.map.heightInPixels - 64);
 
+            this.createMap();
+            this.player = new Player(this, 0, 0, "detectiveAnims");
+            this.createGridEngine();
+            this.createObjectLayers();
+    
+            this.cameras.main.fadeIn(500);
+            this.cameras.main.startFollow(this.player, false, 0.2, 0.2); // -88, -64
+            this.cameras.main.setZoom(2,2);
+            this.cameras.main.setBounds(44, 0, this.map.widthInPixels, this.map.heightInPixels-45);
             this.createTween();
 
+        });
 
+        this.events.on("transitionwake",(sys,data)=>{
+            this.cameras.main.fadeIn(1500);
         });
     }
 
@@ -34,60 +37,76 @@ class Office extends Phaser.Scene {
         for (let layer of this.map.layers) {
             this.map.createLayer(layer.name, this.map.tilesets);
         }
+    }
 
-        // let entrances = this.map.createFromObjects("Entrances", {name: "Entrance", classType: Entrance });
-        // for (let e of entrances) {
-        //     e.addColliders();
-        // }
+    createObjectLayers() {
 
-
-        let interact = this.map.createFromObjects("Items");
-        for (let obj of interact) {
-            let pos = this.map.worldToTileXY(obj.x, obj.y);
-            let playerInteractEvent = "E" + pos.x + "," + pos.y;
-            if (obj.name == "Desk") {
-                this.events.on(playerInteractEvent, () => {
-                    this.scene.pause().run("DeskScene");
-                });
-                obj.setVisible(false);
-            }
-            else if (obj.name == "Chest") {
-                this.events.on(playerInteractEvent, () => {
-                    this.scene.pause().run("InventoryScene");
-                });
-                obj.setVisible(false);
-            }
-            else if (obj.name == "Mailbox") {
-                this.events.on(playerInteractEvent, () => {
-                    this.scene.pause().run("Mailbox");
-                });
-                this.ex = this.add.image(obj.x, obj.y, "exclamation").setScale(2, 2);
-                this.ex.setDepth(100);
-                obj.setVisible(false);
-            }
-            else if (obj.name == "Desk2") {
-                this.events.on(playerInteractEvent, () => {
-                    this.scene.pause().run("AccusationScene");
-                });
-                obj.setVisible(false);
-            }
-            else if (obj.name == "") {
-                console.log("here setting depth");
-                obj.setDepth(100);
-            }
-            else if (obj.name != "") {
-                obj.info = this.objectMap.get(obj.name);
-                this.events.on(playerInteractEvent, () => {
-
-                    this.scene.pause().run("DialogModal", { text: obj.info.commentary, scene: "Office" });
-                    this.scene.get("InventoryScene").events.emit("itemPicked", obj);
-                    obj.destroy();
-                    obj = null;
-                    this.events.removeListener(playerInteractEvent);
-                }, this);
-            }
+        let layerOrder = [];
+        let layerDepth = - 1;
+        let objectDepth = 0.0;
+        for (let layer of this.map.objects) {
+            layerOrder.push([layer.name, "objectLayer"]);
         }
+        for (let layer of this.map.layers) {
+            layerOrder.push([layer.name, "tileLayer"]);
+        }
+        layerOrder.sort((a, b) => {
+            return a[0] - b[0];
+        });
+        for (let i = 0; i < layerOrder.length; i++) {
+            if (layerOrder[i][1] == "tileLayer") {
+                layerDepth++;
+                continue;
+            }
+            objectDepth = layerDepth;
+            if (layerOrder[i][0] != "8") {
+                let arr = this.map.createFromObjects(layerOrder[i][0]);
+                for (let obj of arr) {
+                    obj.setDepth(objectDepth);
+                    objectDepth += 0.01;
+                }
+            }
+            else {
 
+                let interactables = this.map.createFromObjects("8");
+                for (let obj of interactables) {
+                    let pos = this.map.worldToTileXY(obj.x, obj.y);
+                    let playerInteractEvent = "E" + pos.x + "," + pos.y;
+                    if (obj.name == "Desk") {
+                        this.events.on(playerInteractEvent, () => {
+                            this.scene.pause().run("DeskScene");
+                        });
+                        obj.destroy();
+                    }
+                    else if (obj.name == "Chest") {
+                        this.events.on(playerInteractEvent, () => {
+                            this.scene.pause().run("InventoryScene");
+                        });
+                        obj.destroy();
+                    }
+                    else if (obj.name == "Mailbox") {
+                        this.events.on(playerInteractEvent, () => {
+                            this.scene.pause().run("Mailbox");
+                        });
+                        this.ex = this.add.image(obj.x, obj.y, "exclamation").setScale(2, 2);
+                        this.ex.setDepth(100);
+                        obj.destroy();
+                    }
+                    else if (obj.name == "Desk2") {
+                        this.events.on(playerInteractEvent, () => {
+                            this.scene.pause().run("AccusationScene");
+                        });
+                        obj.destroy();
+                    }
+                    else if(obj.name == ""){
+                        obj.setDepth(objectDepth);
+                        objectDepth += 0.01;
+                    }
+                }
+
+            }
+
+        }
     }
 
     createGridEngine() {
@@ -98,25 +117,11 @@ class Office extends Phaser.Scene {
                     sprite: this.player,
                     walkingAnimationMapping: 0,
                     startPosition: { x: 5, y: 3 },
+                    speed: 4
                 },
             ],
         };
         this.gridEngine.create(this.map, gridEngineConfig);
-        this.gridEngine.positionChangeFinished().subscribe(() => {
-            let pos = this.gridEngine.getFacingPosition("player");
-            let worldPos = this.map.tileToWorldXY(pos.x, pos.y);
-            this.player.facingCollider.setPosition(worldPos.x + 8, worldPos.y + 8);
-        });
-    }
-
-    createObjectMap() {
-
-        let objectMap = new Map();
-        var data = this.cache.json.get("objects");
-        for (let i = 0; i < data.length; i++) {
-            objectMap.set(data[i].name, data[i]);
-        }
-        return objectMap;
     }
 
     createTween() {
@@ -135,7 +140,7 @@ class Office extends Phaser.Scene {
             this.ex.setVisible(false);
 
         });
-        this.events.on("mailNotif",()=>{
+        this.events.on("mailNotif", () => {
             this.mailNotifTween.resume();
             this.ex.setVisible(true);
 
