@@ -12,14 +12,14 @@ class Office extends Phaser.Scene {
             this.player = new Player(this, 0, 0, "detectiveAnims");
             this.createGridEngine();
             this.createObjectLayers();
+            this.cabinetItems = [];
             this.cameras.main.fadeIn(500);
-            this.cameras.main.startFollow(this.player, false, 0.2, 0.2); // -88, -64
+            this.cameras.main.startFollow(this.player, false, 0.2, 0.2);
             this.cameras.main.setZoom(2, 2);
             this.cameras.main.setBounds(44, 0, this.map.widthInPixels, this.map.heightInPixels - 45);
             this.createTween();
             this.scene.run("InventoryScene");
             this.scene.sleep("InventoryScene");
-
 
         });
         this.events.on("transitionwake", (sys, data) => {
@@ -29,7 +29,6 @@ class Office extends Phaser.Scene {
             this.scene.pause().run("Mailbox");
         });
     }
-
 
     createCutscene() {
 
@@ -87,6 +86,14 @@ class Office extends Phaser.Scene {
                 for (let obj of arr) {
                     obj.setDepth(objectDepth);
                     objectDepth += 0.01;
+                    if(layerOrder[i][0] == "9"){
+                        obj.setVisible(false);
+                        this.events.on("itemPicked",(item)=>{
+                            if(item.info.name == obj.name){
+                                obj.setVisible(true);
+                            }
+                        });
+                    }
                 }
             }
             else {
@@ -128,7 +135,6 @@ class Office extends Phaser.Scene {
                 }
 
             }
-
         }
     }
 

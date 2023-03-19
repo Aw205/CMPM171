@@ -61,6 +61,7 @@ class Typewriter {
             repeat: textArr.length - 1,
             delay: delayVal,
         });
+        return this.label;
     }
 
     fastForward() {

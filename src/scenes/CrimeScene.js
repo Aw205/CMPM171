@@ -77,7 +77,9 @@ class CrimeScene extends Phaser.Scene {
                     obj.info = this.objectMap.get(obj.name);
                     this.events.on(playerInteractEvent, () => {
                         this.scene.pause().run("DialogModal", { text: obj.info.commentary, scene: "CrimeScene" });
+                        obj.frame.name = parseInt(obj.frame.name) - 4; //change to its colored version
                         this.scene.get("InventoryScene").events.emit("itemPicked", obj);
+                        this.scene.get("Office").events.emit("itemPicked", obj);
                         obj.destroy();
                         obj = null;
                         this.events.removeListener(playerInteractEvent);

@@ -7,7 +7,7 @@ class Menu extends Phaser.Scene {
 
     create() {
 
-        this.input.setDefaultCursor('url(assets/UI/SAxCursor.png), pointer');
+        this.input.setDefaultCursor('url(assets/UI/SAxCursor.png), auto');
         this.add.text(0,0, "",{fontFamily: "mono"}); // just to make sure font is loaded properly
 
         this.text = this.add.bitmapText(game.config.width/2,100,"clean","Out of Depth").setFontSize(48).setOrigin(0.5,0).setAlpha(0);

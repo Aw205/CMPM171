@@ -1,12 +1,4 @@
 { "compressionlevel":-1,
- "editorsettings":
-    {
-     "export":
-        {
-         "format":"json",
-         "target":"OfficeMapSeperatedObjTile.json"
-        }
-    },
  "height":7,
  "infinite":false,
  "layers":[
@@ -20,7 +12,6 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":7,
          "id":1,
-         "locked":true,
          "name":"0",
          "opacity":1,
          "type":"tilelayer",
@@ -32,7 +23,6 @@
         {
          "draworder":"topdown",
          "id":9,
-         "locked":true,
          "name":"1",
          "objects":[
                 {
@@ -93,7 +83,6 @@
         {
          "draworder":"topdown",
          "id":17,
-         "locked":true,
          "name":"2",
          "objects":[
                 {
@@ -269,7 +258,6 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":7,
          "id":2,
-         "locked":true,
          "name":"3",
          "opacity":1,
          "type":"tilelayer",
@@ -281,7 +269,6 @@
         {
          "draworder":"topdown",
          "id":18,
-         "locked":true,
          "name":"4",
          "objects":[
                 {
@@ -312,7 +299,6 @@
             2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634],
          "height":7,
          "id":19,
-         "locked":true,
          "name":"5",
          "opacity":1,
          "type":"tilelayer",
@@ -331,7 +317,6 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":7,
          "id":3,
-         "locked":true,
          "name":"6",
          "opacity":1,
          "type":"tilelayer",
@@ -343,7 +328,6 @@
         {
          "draworder":"topdown",
          "id":16,
-         "locked":true,
          "name":"7",
          "objects":[
                 {
@@ -621,7 +605,6 @@
         {
          "draworder":"topdown",
          "id":6,
-         "locked":true,
          "name":"8",
          "objects":[
                 {
@@ -753,6 +736,101 @@
         },
     
         {
+         "draworder":"topdown",
+         "id":20,
+         "name":"9",
+         "objects":[
+                {
+                 "gid":194,
+                 "height":12,
+                 "id":112,
+                 "name":"Whiskey Glass",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":12,
+                 "x":452,
+                 "y":116
+                }, 
+                {
+                 "gid":170,
+                 "height":8,
+                 "id":113,
+                 "name":"Cigarette Stubs",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":336,
+                 "y":112
+                }, 
+                {
+                 "gid":195,
+                 "height":16,
+                 "id":114,
+                 "name":"Whiskey Bottle",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":487,
+                 "y":111
+                }, 
+                {
+                 "gid":172,
+                 "height":8.74458185613901,
+                 "id":115,
+                 "name":"Newspaper",
+                 "rotation":59,
+                 "type":"",
+                 "visible":true,
+                 "width":9.07899192721374,
+                 "x":375,
+                 "y":138
+                }, 
+                {
+                 "gid":182,
+                 "height":9,
+                 "id":116,
+                 "name":"Playing Cards",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":9,
+                 "x":355,
+                 "y":144
+                }, 
+                {
+                 "gid":184,
+                 "height":16,
+                 "id":117,
+                 "name":"Cold Soup",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":343,
+                 "y":144
+                }, 
+                {
+                 "gid":183,
+                 "height":11,
+                 "id":118,
+                 "name":"Suicide Note",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":10,
+                 "x":425,
+                 "y":110
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 1, 1, 1, 1, 1, 1, 1, 1,
             0, 1, 0, 0, 0, 0, 0, 0, 1,
@@ -762,8 +840,7 @@
             0, 1, 1, 1, 1, 1, 1, 1, 1],
          "height":7,
          "id":5,
-         "locked":true,
-         "name":"9",
+         "name":"10",
          "opacity":0,
          "type":"tilelayer",
          "visible":false,
@@ -771,36 +848,36 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":20,
- "nextobjectid":112,
+ "nextlayerid":21,
+ "nextobjectid":119,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",
  "tileheight":64,
  "tilesets":[
-        {
-         "columns":12,
-         "firstgid":1,
-         "image":"OutOfDepth_Tileset.png",
-         "imageheight":1088,
-         "imagewidth":768,
-         "margin":0,
-         "name":"OutOfDepth_Tileset",
-         "spacing":0,
-         "tilecount":204,
-         "tileheight":64,
-         "tiles":[
-                {
-                 "id":0,
-                 "properties":[
-                        {
-                         "name":"ge_collide",
-                         "type":"bool",
-                         "value":true
-                        }]
-                }],
-         "tilewidth":64
-        }],
+       {
+              "columns":12,
+              "firstgid":1,
+              "image":"OutOfDepth_Tileset.png",
+              "imageheight":1088,
+              "imagewidth":768,
+              "margin":0,
+              "name":"OutOfDepth_Tileset",
+              "spacing":0,
+              "tilecount":204,
+              "tileheight":64,
+              "tiles":[
+                     {
+                      "id":0,
+                      "properties":[
+                             {
+                              "name":"ge_collide",
+                              "type":"bool",
+                              "value":true
+                             }]
+                     }],
+              "tilewidth":64
+             }],
  "tilewidth":64,
  "type":"map",
  "version":"1.8",
