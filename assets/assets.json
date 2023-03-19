@@ -1,7 +1,7 @@
 {
     "image": {
 
-        "crimePortrait" : "crimePortrait.png",
+        "crimePortrait" : "UI/crimePortrait.png",
         "pixelFrame2": "UI/pixelFrame2.png",
         "cursor": "UI/sAxCursor.png",
         "invSelect": "UI/Inventory_select.png",

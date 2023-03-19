@@ -46,12 +46,9 @@ class InterrogationScene extends Phaser.Scene {
             let x = (this.dialogIndex%2 == 0) ? 90: 560 - currentWidth;
             let imgX = (x == 90) ? 105: 545;
 
-            //console.log("width: " + currentWidth + " height: " + currentHeight);
-
             this.typewriter = new Typewriter(this,x + 10,this.currDialogHeight);
             let dialogBox = this.add.nineslice(x,this.currDialogHeight,318,78,"dialogBox",7);
             dialogBox.resize(currentWidth + 20,currentHeight + 10);
-            //dialogBox.setTint(0xE7D2CC);
 
             if(this.dialogIndex%2 == 0){
                 this.add.image(imgX,this.currDialogHeight,"player_portrait").setOrigin(0.5,1);

@@ -13,7 +13,7 @@ let config = {
       //debug: true
     }
   },
-  scene: [LoadingScreen, Menu, GameScreen, Office, DialogModal, InventoryScene, 
+  scene: [LoadingScreen, Menu, Office, DialogModal, InventoryScene, 
     Mailbox, MessageModal, SuspectReportScene, SuspectSelectionScene, DeskScene, 
     CaseScene, AccusationScene,InterrogationScene, ConfirmationModal, WinScene,LoseScene,CrimeScene],
   scale: {

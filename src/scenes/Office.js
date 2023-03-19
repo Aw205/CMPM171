@@ -6,25 +6,48 @@ class Office extends Phaser.Scene {
 
     create() {
 
-        this.tw = new Typewriter(this, 100, 100);
-        this.tw.writeBitmapText("New York \n\n 1937");
-        this.time.delayedCall(3000, () => {
-
+        this.createCutscene();
+        this.events.once("dialog_finished", () => {
             this.createMap();
             this.player = new Player(this, 0, 0, "detectiveAnims");
             this.createGridEngine();
             this.createObjectLayers();
-    
             this.cameras.main.fadeIn(500);
             this.cameras.main.startFollow(this.player, false, 0.2, 0.2); // -88, -64
-            this.cameras.main.setZoom(2,2);
-            this.cameras.main.setBounds(44, 0, this.map.widthInPixels, this.map.heightInPixels-45);
+            this.cameras.main.setZoom(2, 2);
+            this.cameras.main.setBounds(44, 0, this.map.widthInPixels, this.map.heightInPixels - 45);
             this.createTween();
+            this.scene.run("InventoryScene");
+            this.scene.sleep("InventoryScene");
+
 
         });
-
-        this.events.on("transitionwake",(sys,data)=>{
+        this.events.on("transitionwake", (sys, data) => {
             this.cameras.main.fadeIn(1500);
+        });
+        this.cameras.main.once("camerafadeincomplete", () => {
+            this.scene.pause().run("Mailbox");
+        });
+    }
+
+
+    createCutscene() {
+
+        let tw = new Typewriter(this, 100, 100);
+        let label = tw.writeBitmapText("New York \n\n 1937");
+
+        this.time.delayedCall(3000, () => {
+            this.add.tween({
+                targets: label,
+                x: label.x - 470,
+                ease: "Expo.easeInOut"
+            });
+            this.time.delayedCall(2000, () => {
+                this.scene.pause().run("DialogModal", {
+                    text: `The city that never sleeps. \\ It won't let me sleep either. \\ The election's soon.\n\n Great. \\ I've got mail.\n\n Likely a new case. \\ . . . . \\ Don't let me down.`,
+                    scene: "Office"
+                });
+            });
         });
     }
 
@@ -56,9 +79,9 @@ class Office extends Phaser.Scene {
         for (let i = 0; i < layerOrder.length; i++) {
             if (layerOrder[i][1] == "tileLayer") {
                 layerDepth++;
+                objectDepth = layerDepth;
                 continue;
             }
-            objectDepth = layerDepth;
             if (layerOrder[i][0] != "8") {
                 let arr = this.map.createFromObjects(layerOrder[i][0]);
                 for (let obj of arr) {
@@ -98,7 +121,7 @@ class Office extends Phaser.Scene {
                         });
                         obj.destroy();
                     }
-                    else if(obj.name == ""){
+                    else if (obj.name == "") {
                         obj.setDepth(objectDepth);
                         objectDepth += 0.01;
                     }
@@ -116,8 +139,9 @@ class Office extends Phaser.Scene {
                     id: "player",
                     sprite: this.player,
                     walkingAnimationMapping: 0,
-                    startPosition: { x: 5, y: 3 },
-                    speed: 4
+                    startPosition: { x: 3, y: 2 },
+                    speed: 4,
+                    offsetY: -20
                 },
             ],
         };

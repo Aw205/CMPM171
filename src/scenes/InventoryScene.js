@@ -73,10 +73,8 @@ class InventoryScene extends Phaser.Scene {
         this.add.nineslice(400 -60 ,120,46,46,'window',7).resize(280,300);
         this.itemBanner = this.add.nineslice(410 - 60 ,130,32,16,'itemBanner',7);
         this.itemBanner.resize(150,32);
-        //let portrait = this.add.image(450, config.height / 2 - 120, "portrait_frame").setOrigin(0, 0);
-        this.itemImage = this.add.image(450 - 20, config.height / 2 - 50, undefined, undefined).setOrigin(0, 0).setScale(1, 1);
+        this.itemImage = this.add.image(450 - 20, 180, undefined, undefined).setOrigin(0, 0);
         this.itemName = this.add.bitmapText(420 - 60,130,"peaberry",""); //max width 240
-        //this.itemDescription = this.add.bitmapText(410 - 50, 250, "clean","",8);
         this.itemDescription = this.add.text(410 - 60, 250, "",{fontFamily: "mono"}).setWordWrapWidth(260);
 
         this.add.nineslice(410 - 60,340,48,48,"goldFrame",9).resize(260,70);

@@ -6,7 +6,7 @@ class Typewriter {
         this.x = x;
         this.y = y;
         this.text = "";
-        this.label = null;
+        this.label = this.scene.add.text(this.x, this.y, '',{fontFamily: 'mono'});
         this.isFinished = false;
 
     }
@@ -20,7 +20,7 @@ class Typewriter {
         let i = 0;
         this.scene.time.addEvent({
             callback: () => {
-                this.label.text += text[i++]
+                this.label.text += text[i++];
             },
             repeat: text.length - 1,
             delay: 120
@@ -35,24 +35,31 @@ class Typewriter {
                 ease: "Sine.easeIn",
             });
         });
+
+        return this.label;
     }
 
     write(text, delayVal = 50,wrapWidth = 480) {
 
         this.text = text;
-        this.label = this.scene.add.text(this.x, this.y, '',{fontFamily: 'mono'}).setWordWrapWidth(wrapWidth);
-
+        this.isFinished = false;
+        this.label.setDepth(100);
+        this.label.setWordWrapWidth(wrapWidth);
         this.label.setFixedSize(2000,200); //fixed issue??
-
         let textArr = this.label.getWrappedText(text).join('\n'); // needs some fix
 
         let i = 0;
-        this.scene.time.addEvent({
+        this.ev= this.scene.time.addEvent({
             callback: () => {
-                this.label.text += textArr[i++]
+                
+                this.label.text += textArr[i++];
+                if(this.ev.getOverallProgress() == 1){
+                    this.scene.events.emit("typewriter_finished");
+                    this.isFinished = true;
+                }
             },
             repeat: textArr.length - 1,
-            delay: delayVal
+            delay: delayVal,
         });
     }
 
@@ -61,6 +68,7 @@ class Typewriter {
         this.scene.time.removeAllEvents();
         this.label.setText(this.text);
         this.isFinished = true;
+        this.scene.events.emit("typewriter_finished");
 
     }
 
