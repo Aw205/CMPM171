@@ -128,6 +128,12 @@ class Office extends Phaser.Scene {
                         });
                         obj.destroy();
                     }
+                    else if(obj.name == "Plant"){
+                        this.events.on(playerInteractEvent, () => {
+                            this.scene.pause().run("DialogModal",{text: "Fuck that's a lot of plants.", scene: "Office"});
+                        });
+                        obj.destroy();
+                    }
                     else if (obj.name == "") {
                         obj.setDepth(objectDepth);
                         objectDepth += 0.01;

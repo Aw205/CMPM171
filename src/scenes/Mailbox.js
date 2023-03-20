@@ -24,7 +24,7 @@ class Mailbox extends Phaser.Scene {
         of complex cases. A recent fatality has occurred on the far side of the train station. As of now, there are no indications of wrongdoing; nevertheless
         we are entrusting you with the investigation. Unearth the responsible party, and if there be one, mete out justice.\n Best of luck,\n
         Chief Inspector Johnson`);
-        this.addMessage("Controls", " [WASD] to move \n [E] to interact, exit Inventory \n [SPACE] to continue dialog \n ");
+        this.addMessage("Controls", " [WASD] to move \n [E] to interact, exit Inventory \n [SPACE] to continue dialog \n [X] to exit crime scene ");
 
     }
     createMailbox() {

@@ -19,7 +19,7 @@
     },
     {
         "name": "Suicide Note",
-        "description": "A haphazard, frantic farewell. The scribbles are inconsistent but show sophisticated penmanship. The page is littered with cavities along the way, presumably where the unsavory mental state of the writer caused the pen to break through the paper.",
+        "description": "A haphazard, frantic farewell. Erratic scribbles yet sophisticated. The page is littered with cavities, where presumably the unsavory mental state of the writer made pen strokes break through the paper.",
         "forensics": "Written with heavy cursive using a light pen. The signature appears to differ from Thompson’s.",
         "commentary": "These days, any reason is a good reason."
     },
@@ -46,5 +46,11 @@
         "description": "Soup with beans and rice. A hearty meal for an ordinary person.",
         "forensics": "Nothing unusual was detected. It’s just a soup can.",
         "commentary": "Who eats soup cold?"
+    },
+    {
+        "name": "Golden Ticket Note",
+        "description": "A trade deal asking Thompson about shipping rifles to the Republic of Spain. The sender's signature is illegible to the naked eye.",
+        "forensics": "The handwriting is heavy cursive written using a light pen. It is signed by Lord Reynard. ",
+        "commentary": "Nice to see people still like to \" praise the lord and pas the ammunition.\" "
     }
 ]

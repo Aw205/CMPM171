@@ -4,9 +4,6 @@ class InventoryItem extends Phaser.GameObjects.Image{
         super(scene,x,y,item.texture,item.frame.name);
 
         this.setScale(0.5,0.5);
-
-        console.log(item.frame.name);
-
         this.item = item;
         this.setInteractive({ draggable: true, useHandCursor: true });
         this.#createListeners();

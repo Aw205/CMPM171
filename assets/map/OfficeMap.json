@@ -12,6 +12,7 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":7,
          "id":1,
+         "locked":true,
          "name":"0",
          "opacity":1,
          "type":"tilelayer",
@@ -23,6 +24,7 @@
         {
          "draworder":"topdown",
          "id":9,
+         "locked":true,
          "name":"1",
          "objects":[
                 {
@@ -83,6 +85,7 @@
         {
          "draworder":"topdown",
          "id":17,
+         "locked":true,
          "name":"2",
          "objects":[
                 {
@@ -241,6 +244,103 @@
                  "width":36.530753612803,
                  "x":513,
                  "y":69
+                }, 
+                {
+                 "gid":42,
+                 "height":48,
+                 "id":120,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":160,
+                 "y":384
+                }, 
+                {
+                 "gid":42,
+                 "height":32,
+                 "id":121,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":176,
+                 "y":352
+                }, 
+                {
+                 "gid":42,
+                 "height":48,
+                 "id":122,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":64,
+                 "y":352
+                }, 
+                {
+                 "gid":42,
+                 "height":64,
+                 "id":123,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":80,
+                 "y":384
+                }, 
+                {
+                 "gid":42,
+                 "height":48,
+                 "id":124,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":96,
+                 "y":368
+                },
+            
+                {
+                 "gid":42,
+                 "height":48,
+                 "id":125,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":112,
+                 "y":384
+                }, 
+                {
+                 "gid":42,
+                 "height":64,
+                 "id":126,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":128,
+                 "y":368
+                }, 
+                {
+                 "gid":42,
+                 "height":64,
+                 "id":128,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":64,
+                 "y":336
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -258,6 +358,7 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":7,
          "id":2,
+         "locked":true,
          "name":"3",
          "opacity":1,
          "type":"tilelayer",
@@ -269,6 +370,7 @@
         {
          "draworder":"topdown",
          "id":18,
+         "locked":true,
          "name":"4",
          "objects":[
                 {
@@ -299,6 +401,7 @@
             2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634, 2684354634],
          "height":7,
          "id":19,
+         "locked":true,
          "name":"5",
          "opacity":1,
          "type":"tilelayer",
@@ -317,6 +420,7 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":7,
          "id":3,
+         "locked":true,
          "name":"6",
          "opacity":1,
          "type":"tilelayer",
@@ -328,6 +432,7 @@
         {
          "draworder":"topdown",
          "id":16,
+         "locked":true,
          "name":"7",
          "objects":[
                 {
@@ -605,6 +710,7 @@
         {
          "draworder":"topdown",
          "id":6,
+         "locked":true,
          "name":"8",
          "objects":[
                 {
@@ -727,6 +833,30 @@
                  "width":0,
                  "x":538,
                  "y":286
+                }, 
+                {
+                 "height":0,
+                 "id":130,
+                 "name":"Plant",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":97,
+                 "y":284
+                }, 
+                {
+                 "height":0,
+                 "id":131,
+                 "name":"Plant",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":160,
+                 "y":340
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -738,6 +868,7 @@
         {
          "draworder":"topdown",
          "id":20,
+         "locked":true,
          "name":"9",
          "objects":[
                 {
@@ -823,6 +954,18 @@
                  "width":10,
                  "x":425,
                  "y":110
+                }, 
+                {
+                 "gid":67,
+                 "height":16,
+                 "id":129,
+                 "name":"Golden Ticket Note",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":410,
+                 "y":139
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -835,11 +978,12 @@
             0, 1, 1, 1, 1, 1, 1, 1, 1,
             0, 1, 0, 0, 0, 0, 0, 0, 1,
             0, 1, 0, 0, 0, 0, 0, 0, 1,
-            1, 0, 0, 0, 0, 0, 0, 0, 1,
-            1, 0, 0, 1, 1, 1, 0, 0, 1,
+            1, 1, 0, 0, 0, 0, 0, 0, 1,
+            1, 1, 1, 1, 1, 1, 0, 0, 1,
             0, 1, 1, 1, 1, 1, 1, 1, 1],
          "height":7,
          "id":5,
+         "locked":true,
          "name":"10",
          "opacity":0,
          "type":"tilelayer",
@@ -849,35 +993,35 @@
          "y":0
         }],
  "nextlayerid":21,
- "nextobjectid":119,
+ "nextobjectid":132,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",
  "tileheight":64,
  "tilesets":[
-       {
-              "columns":12,
-              "firstgid":1,
-              "image":"OutOfDepth_Tileset.png",
-              "imageheight":1088,
-              "imagewidth":768,
-              "margin":0,
-              "name":"OutOfDepth_Tileset",
-              "spacing":0,
-              "tilecount":204,
-              "tileheight":64,
-              "tiles":[
-                     {
-                      "id":0,
-                      "properties":[
-                             {
-                              "name":"ge_collide",
-                              "type":"bool",
-                              "value":true
-                             }]
-                     }],
-              "tilewidth":64
-             }],
+        {
+         "columns":12,
+         "firstgid":1,
+         "image":"OutOfDepth_Tileset.png",
+         "imageheight":1088,
+         "imagewidth":768,
+         "margin":0,
+         "name":"OutOfDepth_Tileset",
+         "spacing":0,
+         "tilecount":204,
+         "tileheight":64,
+         "tiles":[
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"ge_collide",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }],
+         "tilewidth":64
+        }],
  "tilewidth":64,
  "type":"map",
  "version":"1.8",

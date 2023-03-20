@@ -1,5 +1,7 @@
 class CrimeScene extends Phaser.Scene {
 
+    static cardObtained = false;
+
     constructor() {
         super("CrimeScene");
     }
@@ -72,8 +74,39 @@ class CrimeScene extends Phaser.Scene {
             else {
                 let items = this.map.createFromObjects("9");
                 for (let obj of items) {
+
+                    obj.setDepth(objectDepth);
+                    objectDepth += 0.01;
+                    obj.setPipeline("Light2D");
+
                     let pos = this.map.worldToTileXY(obj.x, obj.y);
                     let playerInteractEvent = "E" + pos.x + "," + pos.y;
+
+                    if (obj.name == "Safe Box") {
+                        this.events.on(playerInteractEvent, () => {
+                            if(CrimeScene.cardObtained == false){
+                                this.scene.pause().run("SafeBoxScene");
+                            }
+                        });
+                        continue;
+                    }
+                    if (obj.name == "Golden Ticket Note") {
+                        obj.info = this.objectMap.get(obj.name);
+                        this.events.on(playerInteractEvent, () => {
+                            if (CrimeScene.cardObtained) {
+                                this.scene.pause().run("DialogModal", { text: obj.info.commentary, scene: "CrimeScene" });
+                                this.scene.get("InventoryScene").events.emit("itemPicked", obj);
+                                this.scene.get("Office").events.emit("itemPicked", obj);
+                                obj.destroy();
+                                obj = null;
+                                this.events.removeListener(playerInteractEvent);
+                            }
+                        }, this);
+                        this.events.once("safeUnlocked",()=>{
+                            obj.setVisible(true);
+                        });
+                        continue;
+                    }
                     obj.info = this.objectMap.get(obj.name);
                     this.events.on(playerInteractEvent, () => {
                         this.scene.pause().run("DialogModal", { text: obj.info.commentary, scene: "CrimeScene" });
@@ -84,9 +117,7 @@ class CrimeScene extends Phaser.Scene {
                         obj = null;
                         this.events.removeListener(playerInteractEvent);
                     }, this);
-                    obj.setDepth(objectDepth);
-                    objectDepth += 0.01;
-                    obj.setPipeline("Light2D");
+
                 }
             }
         }

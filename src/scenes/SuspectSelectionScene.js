@@ -26,18 +26,20 @@ class SuspectSelectionScene extends Phaser.Scene {
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 2; j++) {
 
-                // let nameBanner = this.add.nineslice(110 + 150 * i,90 + 180 * j,30,16,"banner",5);
-                // let t = this.add.bitmapText(120 + 150 * i, 90 + 180 * j,"peaberry",this.names[i][j]);
-                // nameBanner.resize(t.width+20,32);
+                let nameBanner = this.add.nineslice(110 + 160 * i,85 + 180 * j,30,16,"banner",5);
+                let t = this.add.bitmapText(120 + 160 * i, 85 + 180 * j,"peaberry",this.names[i][j]);
+                nameBanner.resize(t.width+20,32);
 
-                let frame = this.add.image(120 + 150 * i, 120 + 180 * j, "portrait_frame").setOrigin(0, 0).setScale(1.5, 1.5);
+                let frame = this.add.image(115 + 160 * i, 120 + 180 * j, "portrait_frame").setOrigin(0, 0).setScale(1.5, 1.5);
                 frame.on("pointerover", () => {
+                    t.setTint(0x5192ee);
                     frame.setTint(0xC4D1E8);
                 });
                 frame.on("pointerout", () => {
+                    t.clearTint();
                     frame.clearTint();
                 });
-                let img = this.add.image(175 + 150 * i, 150 + 180 * j, "suspectHeadshots", this.names[i][j]).setScale(3, 3);
+                let img = this.add.image(170 + 160 * i, 150 + 180 * j, "suspectHeadshots", this.names[i][j]).setScale(3, 3);
                 frame.setInteractive({ useHandCursor: true });
                 frame.on("pointerdown", () => {
                     // this.cameras.main.pan(190+150*i,190+180*j,1000,"Linear",false);

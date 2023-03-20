@@ -17,7 +17,7 @@ class InventoryScene extends Phaser.Scene {
             if(Inventory.forensicsSlotPointer.item == null){
                 return this.createFloatingText(170,320,"No item selected!");
             }
-            else if(this.forensicsCounter == this.forensicsCounter.max){
+            else if(this.forensicsCounter.count == this.forensicsCounter.max){
                 return this.createFloatingText(170,320,"Max limit reached!");
             }
             else if(Inventory.inProgress){
@@ -75,7 +75,7 @@ class InventoryScene extends Phaser.Scene {
         this.itemBanner.resize(150,32);
         this.itemImage = this.add.image(450 - 20, 180, undefined, undefined).setOrigin(0, 0);
         this.itemName = this.add.bitmapText(420 - 60,130,"peaberry",""); //max width 240
-        this.itemDescription = this.add.text(410 - 60, 250, "",{fontFamily: "mono"}).setWordWrapWidth(260);
+        this.itemDescription = this.add.text(410 - 60, 250, "",{fontFamily: "mono"}).setWordWrapWidth(267);
 
         this.add.nineslice(410 - 60,340,48,48,"goldFrame",9).resize(260,70);
         this.forensicsLock = this.add.image(540 - 60,375,"lock").setScale(2,2);

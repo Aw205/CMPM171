@@ -26,13 +26,14 @@ class DialogModal extends Phaser.Scene {
 
         this.events.on("typewriter_finished",()=>{
             if(this.sectionIndex != this.textArr.length -1){
-                this.endIndicator.setVisible(true);
+                return this.endIndicator.setVisible(true);
             }
+            this.scene.get(this.prevScene).events.emit("dialog_finished");
         });
 
         this.sectionIndex = 0;
         this.textArr = data.text.split("\\");
-        this.typewriter.write(this.textArr[0],25);
+        this.typewriter.write(this.textArr[0],25,450);
     }
 
     #onKeyDownSpace() {
@@ -43,10 +44,10 @@ class DialogModal extends Phaser.Scene {
         if (this.sectionIndex != this.textArr.length - 1) {
             this.typewriter.clearText();
             this.endIndicator.setVisible(false);
-            return this.typewriter.write(this.textArr[++this.sectionIndex],25);
+            return this.typewriter.write(this.textArr[++this.sectionIndex],25,450);
         }
+        this.scene.get(this.prevScene).events.emit("modalFinished");
         this.scene.stop().resume(this.prevScene);
-        this.scene.get(this.prevScene).events.emit("dialog_finished");
     }
 
 }

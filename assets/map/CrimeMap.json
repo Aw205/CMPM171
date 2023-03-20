@@ -463,18 +463,6 @@
                  "y":202
                 }, 
                 {
-                 "gid":126,
-                 "height":64,
-                 "id":65,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":64,
-                 "x":368,
-                 "y":336
-                }, 
-                {
                  "gid":93,
                  "height":79,
                  "id":73,
@@ -802,8 +790,8 @@
                  "type":"",
                  "visible":true,
                  "width":16,
-                 "x":144,
-                 "y":544
+                 "x":286,
+                 "y":495
                 }, 
                 {
                  "gid":187,
@@ -816,6 +804,30 @@
                  "width":16,
                  "x":96,
                  "y":416
+                }, 
+                {
+                 "gid":126,
+                 "height":64,
+                 "id":65,
+                 "name":"Safe Box",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":64,
+                 "x":368,
+                 "y":336
+                }, 
+                {
+                 "gid":67,
+                 "height":21,
+                 "id":90,
+                 "name":"Golden Ticket Note",
+                 "rotation":0,
+                 "type":"",
+                 "visible":false,
+                 "width":20,
+                 "x":396,
+                 "y":282
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -845,8 +857,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":11,
- "nextobjectid":90,
+ "nextlayerid":12,
+ "nextobjectid":91,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",
