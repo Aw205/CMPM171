@@ -43,7 +43,7 @@ class LoadingScreen extends Phaser.Scene {
         let border = this.add.graphics({ lineStyle: { width: 5, color: 0xaaaaaa } });
         border.strokeRectShape(borderRect);
 
-        this.add.text(game.config.width / 2, game.config.height / 2 - 50, "Loading...");
+        this.add.text(game.config.width / 2, game.config.height / 2 - 50, "Pouring Drinks...");
 
         this.progressBar = this.add.graphics();
         this.load.on("progress", (progress) => {

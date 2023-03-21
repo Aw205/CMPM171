@@ -14,7 +14,7 @@
                         "How do you think the election will change now that Thompson is dead?",
                         "I’ve never fancied the Mayor but his position is now secure unless he has a new challenger",
                         "Where were you last Friday night?",
-                        "I was at my manor the entire week, just ask my staff."
+                        "I was out running some errands."
                         ],
                         [ "Hey, just got some quick follow up questions",
                         "Sure, happy to help",
@@ -52,9 +52,9 @@
                     "What? You can’t trust any of these people! So you think I’m a killer?",
                     "What were you doing last Friday night then?",
                     "Fine, I was at The Gentlemen’s Club, its not a crime to visit a nightclub is it?",
-                    "You went there to have an alibi, then you went to Thompson’s and killed him, we found your business card there.",
-                    "That’s crazy! I left early to go home but I never even went near his place. That business card could’ve been left there ages ago or someone is trying to frame me.",
-                    "Sure, of course you’re innocent, anything else to say to defend yourself?",
+                    "You went there to have an alibi, then you went to Thompson’s and killed him so you can keep being Mayor.",
+                    "That’s crazy! I left early to go home but I never even went near his place.",
+                    "Sure, of course you’re innocent, anything else ?",
                     "I know I’m innocent. I also know Reynard and Faust cannot be trusted, if that’s where you are getting this information.",
                     "We will see. "
                     ]       
@@ -63,7 +63,7 @@
     },
     {
         "name": "Commander Pike",
-        "bio": "Commander Pike is the commander of one of the districts of the city. They’re endorse and supported by the mayor, and are responsible for assigning Detective Jacobs to the case. Word on the street is that they’re in the mood for a promotion.",
+        "bio": "Commander Pike is the commander of one of the districts of the city. They’re endorsed and supported by the mayor, and are responsible for assigning you to the case.",
         "transcripts": [
         
                         [ "What did you think of Thompson?",
@@ -71,7 +71,7 @@
                         "Are there any repercussions to Thompson’s death?",
                         "Now I’m never getting promoted to Commissioner because the Mayor has to deal with this.",
                         "Do you have an alibi for the time of Thompson’s death?",
-                        "Alibi? I am the police!",
+                        "Alibi? I AM the police!",
                         "Do you have any ideas why Thompson killed himself?",
                         "Why are you even questioning me? Its a suicide! Now if you’ll stop wasting my time I have more important matters to attend to."
                     ]
@@ -83,8 +83,8 @@
         "transcripts": [
         
                       [ "What was your relationship with Thompson?",
-                        "We’re old friends from the war. We were supposed to be getting into some business together.",
-                        "What kind of business did you do with Thompson?",
+                        "Johns an old friend from the war. We were supposed to be getting into some business together.",
+                        "What kind of business?",
                         "He was nice enough to loan me some money for my “problem” We were just talking about some ways for me to settle my debt to him.",
                         "When's the last time you saw him?",
                         "We get drinks and reminisce about the war fairly often. We actually met pretty recently. Just before….",
@@ -100,10 +100,10 @@
         
                       [ "What did you think of Thompson?",
                         "People may think I hold a grudge against Thompson, but that's just gossip.",
-                        "Weren’t you directly opposed to Thompson?",
+                        "Weren’t you trying to compete for his clients?",
                         "My beef with Thompson is nothing personal, it's always just been business. When in history has it been about anything but?",
-                        "Didn’t you have a bit of a conflict of interest with Thompson?",
-                        "Let’s just say that we were in somewhat of an “arms race”. Come back when you got some real evidence, you are wasting my time."
+                        "Didn’t you have a ongoing feud with Thompson?",
+                        "I thought he killed himself”. Come back when you got some real evidence, you are wasting my time."
                     ],
                     [ "Hey, just got some follow up questions and I’ll be out of your hair",
                     "Just make it quick, this case is not good for my PR",
@@ -112,14 +112,14 @@
                     "So you stay out of each other's business, then why did you show up at his apartment?",
                     "What are you talking about? I don’t even know where he lives? Are you trying to gaslight me?",
                     "Sorry about that, standard procedure.Can I buy you a drink later to make up for it?",
-                    "Uhhh I’m not interested, besides, I don’t drink. Ever since Prohibition, I haven’t even touched a cigarette. Everyone knows that",
-                    "Thank you, we're done here."
+                    "Not interested, besides, I don’t drink. I haven’t even touched a cigarette. Everyone knows that",
+                    "I can tell you don't smoke. Thank you, we're done here."
                     ]
         ]
     },
     {
         "name": "Jenny",
-        "bio": "Jenny is a streetwalker, but not a particularly well known one. Due to the caliber of her clientele she’s rather tight lipped and information is mostly scarce or fleeting. She has been seen talking once or twice with Thompson.",
+        "bio": "Jenny is an exotic dancer at the high end Gentlemen's club.  Due to the caliber of her clientele she’s rather tight lipped and information is mostly scarce or fleeting. She has been seen talking once or twice with Thompson.",
         "transcripts": [
                       [ "Do you know anything about the death of Thompson?",
                         "I don't talk to cops.",

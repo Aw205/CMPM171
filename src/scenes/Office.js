@@ -48,7 +48,7 @@ class Office extends Phaser.Scene {
             });
             this.time.delayedCall(2000, () => {
                 this.scene.pause().run("DialogModal", {
-                    text: `The city that never sleeps. \\ It won't let me sleep either. \\ The election's soon.\n\n Great. \\ I've got mail.\n\n Likely a new case. \\ . . . . \\ Don't let me down.`,
+                    text: `The city that never sleeps. \n\n\n\n Press space \\ It won't let me sleep either. \\ The election's soon.\n\n Great. I've got mail.\n\n Likely a new case. \\ . . . . `,
                     scene: "Office"
                 });
             });

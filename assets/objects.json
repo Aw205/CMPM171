@@ -2,18 +2,18 @@
     {
         "name": "Whiskey Glass",
         "description": "A spirits glass, decorated with old-fashioned crisscross patterns. It is dirty, with murky residue along the lip.",
-        "forensics": "Traces of arsenic detected in the alcohol.",
+        "forensics": "Traces of arsenic detected.",
         "commentary": "If there was ever a time to have a drink, it’d be now."
     },
     {
         "name": "Playing Cards",
-        "description": "An ordinary set of black and red playing cards. They appear unused, lacking the typical wear on the edges and tarnishing on the faces.",
+        "description": "An ordinary set of black and red playing cards. They appear used, showing the typical wear on the edges and tarnishing on the faces.",
         "forensics": "Fingerprints were found on the cards. They belong to Professor Bates.",
         "commentary": "Looks like things weren’t coming up aces for Thompson."
     },
     {
         "name": "Newspaper",
-        "description": "An incomplete crossword puzzle spreads across the front page. One of the hints reads: ‘7 down is death’. The writer’s solutions are barely legible, with letters of varying sizes filling each box.",
+        "description": "An incomplete crossword puzzle spreads across the front page.The writer’s solutions are barely legible, with letters of varying sizes filling each box.",
         "forensics": "Heavy pen markings litter the newspaper. The current year is circled: 1937.",
         "commentary": "7 across is death. Someone at the tabloids must be upset."
     },
@@ -24,22 +24,22 @@
         "commentary": "These days, any reason is a good reason."
     },
     {
-        "name": "Dirty Money",
+        "name": "Stack of Money",
         "description": "A frayed stack of cash, acclimated to frequent transportation and changing hands.",
-        "forensics": "These bills were marked,traced back to the First National Bank Robbery.",
-        "commentary": "It's a clean job, but he was paid dirty money for it."
+        "forensics": "Nothing ordinary, 10 grand",
+        "commentary": "Why isn't this in a safe?"
     },
     {
         "name": "Whiskey Bottle",
-        "description": "A tall bottle of spirits, thick and heavy. The label is peeling, and the whiskey is clear and golden.",
-        "forensics": "This drink was laced with arsenic. Not a lot, but enough to cause fatal damage.",
-        "commentary": "Jameson, as Irish as a potato famine. Or the accent."
+        "description": "A tall bottle of spirits, thick and heavy. The label is new, and the whiskey is clear and golden.",
+        "forensics": "This drink was laced with lethal doses of arsenic.",
+        "commentary": "Jameson, as Irish as a potato famine."
     },
     {
         "name": "Cigarette Stubs",
-        "description": "A dark, forest-green pack of toasted cigarettes. It has the words 'LUCKY STRIKE' branded on the front.",
-        "forensics": "These contain 17 milligrams of nicotine, a strong amount, but not dangerous.",
-        "commentary": "Feels like I’ve been seeing that brand everywhere. That or I’ve lost it."
+        "description": "A pack of Lucky Strike cigarettes.",
+        "forensics": "These contain a standard 17 milligrams of nicotine, a healthy amount",
+        "commentary": "Not so lucky after all."
     },
     {
         "name": "Cold Soup",
@@ -51,6 +51,6 @@
         "name": "Golden Ticket Note",
         "description": "A trade deal asking Thompson about shipping rifles to the Republic of Spain. The sender's signature is illegible to the naked eye.",
         "forensics": "The handwriting is heavy cursive written using a light pen. It is signed by Lord Reynard. ",
-        "commentary": "Nice to see people still like to \" praise the lord and pas the ammunition.\" "
+        "commentary": "Nice to see people still like to \" praise the lord and pass the ammunition.\" "
     }
 ]
