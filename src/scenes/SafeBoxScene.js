@@ -17,6 +17,7 @@ class SafeBoxScene extends Phaser.Scene {
             if(val.trim() == "1937"){
                this.tw.write("Success! There's nothing inside...except a note?");
                CrimeScene.cardObtained = true;
+               this.scene.scene.events.emit("safeUnlocked");
                this.scene.get("CrimeScene").events.emit("safeUnlocked");
             }
             else{

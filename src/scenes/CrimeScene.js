@@ -8,6 +8,11 @@ class CrimeScene extends Phaser.Scene {
 
     create() {
 
+        this.sound.play("crime_music",{loop:true});
+        this.events.on("sleep",()=>{
+            this.sound.get("crime_music").pause();
+        });
+
         this.createMap();
         this.objectMap = this.createObjectMap();
         this.player = new Player(this, 0, 0, "detectiveAnims").setPipeline("Light2D");
@@ -29,6 +34,7 @@ class CrimeScene extends Phaser.Scene {
         });
         this.events.on("wake", () => {
             this.cameras.main.fadeIn(500);
+            this.sound.get("crime_music").resume();
         });
     }
 

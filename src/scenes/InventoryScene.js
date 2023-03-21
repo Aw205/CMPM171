@@ -30,6 +30,7 @@ class InventoryScene extends Phaser.Scene {
                 let itemName = Inventory.forensicsSlotPointer.item.item.info.name;
                 Inventory.forensicsSlotPointer.item.setVisible(false);
                 Inventory.inProgress = true;
+                this.events.emit("forensicsCompleted",this.forensicsCounter.count);
                 this.scene.get("Office").time.delayedCall(5000, () => {
                     this.scene.get("Mailbox").events.emit("sendMail",
                         "Forensics Analysis",

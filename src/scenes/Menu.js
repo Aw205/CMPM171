@@ -7,6 +7,8 @@ class Menu extends Phaser.Scene {
 
     create() {
 
+        this.sound.play("menu_music",{loop: true});
+
         this.input.setDefaultCursor('url(assets/UI/SAxCursor.png), auto');
         this.add.text(0,0, "",{fontFamily: "mono"}); // just to make sure font is loaded properly
 
@@ -25,7 +27,9 @@ class Menu extends Phaser.Scene {
             });
         }).setOrigin(0.5);
         this.tutorialButton = new TextButton(this, game.config.width / 2, 550, "Options", { fontSize: 20 },"button_background",() => { }).setOrigin(0.5);
-        this.creditsButton = new TextButton(this, game.config.width / 2, 600, "Credits", { fontSize: 22 },"button_background", () => { }).setOrigin(0.5);
+        this.creditsButton = new TextButton(this, game.config.width / 2, 600, "Credits", { fontSize: 22 },"button_background", () => {
+            this.scene.sleep().run("CreditsScene");
+         }).setOrigin(0.5);
 
         this.tweenButtons();
     }

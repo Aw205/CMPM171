@@ -14,8 +14,8 @@ let config = {
     }
   },
   scene: [LoadingScreen, Menu, Office, DialogModal, InventoryScene, 
-    Mailbox, MessageModal, SuspectReportScene, SuspectSelectionScene, DeskScene, 
-    CaseScene, AccusationScene,InterrogationScene, ConfirmationModal, WinScene,LoseScene,CrimeScene,SafeBoxScene],
+    Mailbox, MessageModal, SuspectSelectionScene, DeskScene, 
+    CaseScene, AccusationScene, ConfirmationModal, WinScene,LoseScene,CrimeScene,SafeBoxScene,CreditsScene],
   scale: {
     mode: Phaser.Scale.FIT,
   },

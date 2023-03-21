@@ -15,7 +15,7 @@ class DeskScene extends Phaser.Scene {
         this.#createListeners();
 
         new ImageButton(this, 560, 90, "exitButton", undefined, "exitPressedButton", () => {
-            this.scene.stop().run("Office");
+            this.scene.sleep().run("Office");
         }).setScale(2);
     }
 

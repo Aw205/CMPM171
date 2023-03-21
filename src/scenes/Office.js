@@ -12,7 +12,6 @@ class Office extends Phaser.Scene {
             this.player = new Player(this, 0, 0, "detectiveAnims");
             this.createGridEngine();
             this.createObjectLayers();
-            this.cabinetItems = [];
             this.cameras.main.fadeIn(500);
             this.cameras.main.startFollow(this.player, false, 0.2, 0.2);
             this.cameras.main.setZoom(2, 2);
@@ -20,11 +19,17 @@ class Office extends Phaser.Scene {
             this.createTween();
             this.scene.run("InventoryScene");
             this.scene.sleep("InventoryScene");
+            this.scene.run("SuspectSelectionScene");
+            this.scene.sleep("SuspectSelectionScene");
 
         });
         this.events.on("transitionwake", (sys, data) => {
             this.cameras.main.fadeIn(1500);
+            this.sound.get("menu_music").resume();
         });
+        this.events.on("sleep",()=>{
+            this.sound.get("menu_music").pause();
+        })
         this.cameras.main.once("camerafadeincomplete", () => {
             this.scene.pause().run("Mailbox");
         });

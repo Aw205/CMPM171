@@ -13,11 +13,11 @@ class SuspectSelectionScene extends Phaser.Scene {
         this.#createPortraits();
 
         new ImageButton(this, 560, 90, "exitButton", undefined, "exitPressedButton", () => {
-            this.scene.stop().run("Office");
+            this.scene.sleep().run("Office");
         }).setScale(2);
 
         new ImageButton(this, 100, 90, "backButton", undefined, "backPressedButton", () => {
-            this.scene.stop().run("DeskScene");
+            this.scene.sleep().run("DeskScene");
         }).setScale(2);
     }
 
@@ -41,10 +41,11 @@ class SuspectSelectionScene extends Phaser.Scene {
                 });
                 let img = this.add.image(170 + 160 * i, 150 + 180 * j, "suspectHeadshots", this.names[i][j]).setScale(3, 3);
                 frame.setInteractive({ useHandCursor: true });
+                
+                this.scene.add("SuspectReportScene" + this.names[i][j],SuspectReportScene,true,{suspectInfo: this.reportMap.get(this.names[i][j])});
+                this.scene.sleep("SuspectReportScene" + this.names[i][j]);
                 frame.on("pointerdown", () => {
-                    // this.cameras.main.pan(190+150*i,190+180*j,1000,"Linear",false);
-                    // this.cameras.main.zoomTo(4,1000,"Linear");
-                    this.scene.stop().run("SuspectReportScene", { suspectInfo: this.reportMap.get(this.names[i][j]) });
+                    this.scene.sleep().run("SuspectReportScene" + this.names[i][j]);
                 });
             }
         }

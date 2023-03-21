@@ -28,8 +28,21 @@
         "player_portrait": "UI/player_portrait.png",
         "folder": "UI/yellow_folder.png"
     },
+    "svg":{
+        "credits" : [
+            "CMPM171_Credits.svg",
+            {
+                "width": 640,
+                "height": 480
+            }
+        
+        ]
+
+    },
     "audio": {
-        "button_click": "audio/button_click.wav"
+        "button_click": "audio/button_click.wav",
+        "crime_music": "audio/new_deal_2.mp3",
+        "menu_music": "audio/french_75_trimmed.mp3"
     },
     "spritesheet": {
         "detectiveAnims": [
